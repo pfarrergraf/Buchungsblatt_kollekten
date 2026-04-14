@@ -1,0 +1,312 @@
+2026-04-14 18:01:39,196 [INFO] main: === Kollekten-Automation gestartet (nur Jahr 2026) ===
+2026-04-14 18:02:15,802 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:02:16,829 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:02:16,903 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:02:16,924 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:02:16,950 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:02:17,976 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:02:18,105 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:02:18,636 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:07:23,811 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147221227, 'OLE error 0x80040115', None, None)
+2026-04-14 18:08:50,610 [INFO] main: === Kollekten-Automation gestartet (nur Jahr 2026) ===
+2026-04-14 18:09:15,921 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:09:16,771 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:09:16,837 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:09:16,858 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:09:16,880 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:09:18,102 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:09:18,222 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:09:18,643 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:15:17,699 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-12 12:23:00.193000+00:00)
+2026-04-14 18:15:17,707 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_04.xlsx
+2026-04-14 18:15:17,854 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17: 2026-04-02 | 231.00 € | Kinder-u. Jugendarbeit eigene Gemeinde
+2026-04-14 18:15:17,855 [INFO] main: OK: 02.04.2026 | 231.00 € | Kinder-u. Jugendarbeit eigene Gemeinde → Kollekten_2026_04.xlsx
+2026-04-14 18:15:30,571 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-05 07:28:31.650000+00:00)
+2026-04-14 18:15:30,571 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004DCE2E0F20000)
+2026-04-14 18:15:31,114 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-14 18:15:31,114 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004DCE2E0D40000)
+2026-04-14 18:15:31,279 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-14 18:15:31,283 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_03.xlsx
+2026-04-14 18:15:31,416 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17: 2026-03-29 | 147.70 € | Eigene Gemeinde
+2026-04-14 18:15:31,417 [INFO] main: OK: 29.03.2026 | 147.70 € | Eigene Gemeinde → Kollekten_2026_03.xlsx
+2026-04-14 18:15:57,053 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-14 18:15:57,053 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AF0050000)
+2026-04-14 18:16:06,016 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-14 18:16:06,016 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEFB80000)
+2026-04-14 18:16:18,150 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-14 18:16:18,150 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF850000)
+2026-04-14 18:16:18,345 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-14 18:16:18,345 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF860000)
+2026-04-14 18:16:25,989 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-14 18:16:25,989 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF050000)
+2026-04-14 18:16:45,152 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-14 18:16:45,152 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-14 18:16:56,747 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-14 18:16:56,747 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004AA3E20F80000)
+2026-04-14 18:17:02,287 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-14 18:17:02,290 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_01.xlsx
+2026-04-14 18:17:02,418 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17: 2026-01-25 | 77.24 € | Bibelhaus Erlebnismuseum
+2026-04-14 18:17:02,419 [INFO] main: OK: 25.01.2026 | 77.24 € | Bibelhaus Erlebnismuseum → Kollekten_2026_01.xlsx
+2026-04-14 18:17:02,561 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-14 18:17:02,689 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18: 2026-01-08 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde
+2026-04-14 18:17:02,690 [INFO] main: OK: 08.01.2026 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde → Kollekten_2026_01.xlsx
+2026-04-14 18:17:10,557 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-14 18:17:10,557 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004A56C198F0000)
+2026-04-14 18:17:22,421 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-14 18:17:22,422 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAC4F0000)
+2026-04-14 18:20:46,441 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 15 neue relevante E-Mails, 0 bereits verarbeitet übersprungen, 2632 nicht passend.
+2026-04-14 18:20:46,443 [INFO] main: === Fertig: 4 verarbeitet, 11 Fehler ===
+2026-04-14 18:27:01,413 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 18:27:33,908 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:27:34,602 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:27:34,650 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:27:34,666 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:27:34,682 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:27:35,456 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:27:35,549 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:27:35,891 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:30:16,017 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue relevante E-Mails, 0 bereits verarbeitet übersprungen, 16044 nicht passend.
+2026-04-14 18:30:16,019 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
+2026-04-14 18:57:01,395 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 18:57:29,538 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:57:30,366 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:57:30,432 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:57:30,455 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:57:30,475 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:57:31,433 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:57:31,547 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 18:57:31,973 [WARNING] outlook_reader: Fehler beim Lesen einer E-Mail: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Outlook', 'Der Name Ihrer digitalen ID kann im zugrunde liegenden Sicherheitssystem nicht gefunden werden.', None, 0, -2146893792), None)
+2026-04-14 19:03:38,729 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-14 19:03:38,736 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_03.xlsx
+2026-04-14 19:03:38,875 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17: 2026-03-22 | 99.70 € | Stiftung für das Leben
+2026-04-14 19:03:38,876 [INFO] main: OK: 22.03.2026 | 99.70 € | Stiftung für das Leben → Kollekten_2026_03.xlsx
+2026-04-14 19:04:55,055 [INFO] main: === Kollekten-Automation gestartet (nur Jahr 2026) ===
+2026-04-14 19:05:03,455 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 18:19:13.816000+00:00)
+2026-04-14 19:05:03,455 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB970000)
+2026-04-14 19:05:04,368 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 16:46:43.424000+00:00)
+2026-04-14 19:05:04,368 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB990000)
+2026-04-14 19:05:04,866 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 16:45:31.438000+00:00)
+2026-04-14 19:05:04,866 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB9A0000)
+2026-04-14 19:05:06,886 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-26 14:20:40.768000+00:00)
+2026-04-14 19:05:06,886 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB870000)
+2026-04-14 19:05:07,211 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-25 18:42:33.416000+00:00)
+2026-04-14 19:05:07,211 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB750000)
+2026-04-14 19:05:07,454 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-25 16:10:22.442000+00:00)
+2026-04-14 19:05:07,457 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_1995_12.xlsx
+2026-04-14 19:05:07,564 [INFO] excel_writer: Eingetragen in Kollekten_1995_12.xlsx Zeile 17: 1995-12-24 | 605.47 € | Brot für die Welt
+2026-04-14 19:05:07,566 [INFO] main: OK: 24.12.1995 | 605.47 € | Brot für die Welt → Kollekten_1995_12.xlsx
+2026-04-14 19:05:11,507 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-21 11:36:00.234000+00:00)
+2026-04-14 19:05:11,508 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB560000)
+2026-04-14 19:06:57,602 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue E-Mails, 0 bereits verarbeitet übersprungen.
+2026-04-14 19:06:57,606 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
+2026-04-14 19:07:26,306 [INFO] main: === Kollekten-Automation gestartet (nur Jahr 2026) ===
+2026-04-14 19:07:33,654 [INFO] main: Verarbeite E-Mail: Anmeldung (empfangen: 2026-03-13 09:13:20.961000+00:00)
+2026-04-14 19:07:33,655 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000F3468949DF9B1349AC0C636E5831EED20700755D5D519C3D984E8126736175253C22000000D850B5000031941D49FE131D49A56C06F8475DA0D3000422FB71810000)
+2026-04-14 19:08:22,923 [INFO] main: Verarbeite E-Mail: Mietanfrage (empfangen: 2026-04-06 13:14:00.861000+00:00)
+2026-04-14 19:08:22,923 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07003ED6CC2C4045174EB550618D417715A10004DCE2F85A00003ED6CC2C4045174EB550618D417715A10004DCE2FC480000)
+2026-04-14 19:08:23,147 [INFO] main: Verarbeite E-Mail: Mietanfrage (empfangen: 2026-04-06 09:37:25.245000+00:00)
+2026-04-14 19:08:23,147 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07003ED6CC2C4045174EB550618D417715A10004DCE2F85A00003ED6CC2C4045174EB550618D417715A10004DCE2FC470000)
+2026-04-14 19:08:23,449 [INFO] main: Verarbeite E-Mail: Mietanfrage (empfangen: 2026-04-02 14:55:00.794000+00:00)
+2026-04-14 19:08:23,449 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07003ED6CC2C4045174EB550618D417715A10004DCE2F85A00003ED6CC2C4045174EB550618D417715A10004DCE2FC460000)
+2026-04-14 19:08:25,898 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-14 19:08:26,003 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_04.xlsx
+2026-04-14 19:08:26,097 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17: 2026-04-03 | 147.29 € | Christl. Jüdische Verständigung
+2026-04-14 19:08:26,097 [INFO] main: OK: 03.04.2026 | 147.29 € | Christl. Jüdische Verständigung → Kollekten_2026_04.xlsx
+2026-04-14 19:08:26,383 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-14 19:08:26,473 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_03.xlsx
+2026-04-14 19:08:26,564 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17: 2026-03-29 | 147.70 € | Eigene Gemeinde
+2026-04-14 19:08:26,565 [INFO] main: OK: 29.03.2026 | 147.70 € | Eigene Gemeinde → Kollekten_2026_03.xlsx
+2026-04-14 19:08:26,852 [INFO] main: Verarbeite E-Mail: Konfianmeldung (empfangen: 2026-03-27 15:36:41.978000+00:00)
+2026-04-14 19:08:26,852 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004D49640150000)
+2026-04-14 19:08:27,069 [INFO] main: Verarbeite E-Mail: Konfianmeldung (empfangen: 2026-03-23 10:00:39.797000+00:00)
+2026-04-14 19:08:27,069 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004DCE2E1670000)
+2026-04-14 19:08:27,280 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-14 19:08:27,367 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18: 2026-03-22 | 99.70 € | Stiftung für das Leben
+2026-04-14 19:08:27,367 [INFO] main: OK: 22.03.2026 | 99.70 € | Stiftung für das Leben → Kollekten_2026_03.xlsx
+2026-04-14 19:08:27,603 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-14 19:08:27,712 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19: 2026-03-15 | 83.30 € | Inclusive Gemeindearbeit EKHN
+2026-04-14 19:08:27,713 [INFO] main: OK: 15.03.2026 | 83.30 € | Inclusive Gemeindearbeit EKHN → Kollekten_2026_03.xlsx
+2026-04-14 19:08:27,994 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-14 19:08:27,994 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEFB80000)
+2026-04-14 19:08:28,211 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-14 19:08:28,302 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 20: 2026-03-01 | 82.00 € | Öffentlichkeitsarbeit eig. Gemeinde
+2026-04-14 19:08:28,302 [INFO] main: OK: 01.03.2026 | 82.00 € | Öffentlichkeitsarbeit eig. Gemeinde → Kollekten_2026_03.xlsx
+2026-04-14 19:08:28,535 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-14 19:08:28,633 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_02.xlsx
+2026-04-14 19:08:28,721 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17: 2026-02-28 | 95.00 € | Allgemeine Gemeindearbeit
+2026-04-14 19:08:28,722 [INFO] main: OK: 28.02.2026 | 95.00 € | Allgemeine Gemeindearbeit → Kollekten_2026_02.xlsx
+2026-04-14 19:08:28,933 [INFO] main: Verarbeite E-Mail: Mietanfrage (empfangen: 2026-02-23 15:45:23.466000+00:00)
+2026-04-14 19:08:28,933 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF510000)
+2026-04-14 19:08:29,188 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-14 19:08:29,188 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF050000)
+2026-04-14 19:08:29,398 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-14 19:08:29,398 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-14 19:08:29,689 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-14 19:08:29,689 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004AA3E20F80000)
+2026-04-14 19:08:29,944 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-14 19:08:30,038 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_01.xlsx
+2026-04-14 19:08:30,158 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17: 2026-01-25 | 77.24 € | Bibelhaus Erlebnismuseum
+2026-04-14 19:08:30,159 [INFO] main: OK: 25.01.2026 | 77.24 € | Bibelhaus Erlebnismuseum → Kollekten_2026_01.xlsx
+2026-04-14 19:08:30,430 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-14 19:08:30,520 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18: 2026-01-08 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde
+2026-04-14 19:08:30,521 [INFO] main: OK: 08.01.2026 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde → Kollekten_2026_01.xlsx
+2026-04-14 19:08:30,753 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-14 19:08:30,842 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 19: 2026-01-11 | 61.00 € | Diakonie Hessen
+2026-04-14 19:08:30,843 [INFO] main: OK: 11.01.2026 | 61.00 € | Diakonie Hessen → Kollekten_2026_01.xlsx
+2026-04-14 19:08:31,043 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-14 19:08:31,134 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 20: 2026-01-04 | 10.00 € | JuLeiCa
+2026-04-14 19:08:31,135 [INFO] main: OK: 04.01.2026 | 10.00 € | JuLeiCa → Kollekten_2026_01.xlsx
+2026-04-14 19:09:02,896 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 21 neue E-Mails, 7 bereits verarbeitet übersprungen.
+2026-04-14 19:09:02,975 [INFO] main: === Fertig: 10 verarbeitet, 11 Fehler ===
+2026-04-14 19:09:41,935 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 8 neue relevante E-Mails, 15 bereits verarbeitet übersprungen, 27765 nicht passend.
+2026-04-14 19:09:41,938 [INFO] main: === Fertig: 2 verarbeitet, 6 Fehler ===
+2026-04-14 19:27:01,719 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 19:27:15,113 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-14 19:27:15,205 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_04.xlsx
+2026-04-14 19:27:15,287 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17: 2026-04-03 | 147.29 € | Christl. Jüdische Verständigung
+2026-04-14 19:27:15,288 [INFO] main: OK: 03.04.2026 | 147.29 € | Christl. Jüdische Verständigung → Kollekten_2026_04.xlsx
+2026-04-14 19:27:15,423 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-14 19:27:15,508 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_03.xlsx
+2026-04-14 19:27:15,588 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17: 2026-03-29 | 147.70 € | Eigene Gemeinde
+2026-04-14 19:27:15,589 [INFO] main: OK: 29.03.2026 | 147.70 € | Eigene Gemeinde → Kollekten_2026_03.xlsx
+2026-04-14 19:27:15,895 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-14 19:27:15,986 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18: 2026-03-22 | 99.70 € | Stiftung für das Leben
+2026-04-14 19:27:15,987 [INFO] main: OK: 22.03.2026 | 99.70 € | Stiftung für das Leben → Kollekten_2026_03.xlsx
+2026-04-14 19:27:16,126 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-14 19:27:16,232 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19: 2026-03-15 | 83.30 € | Inclusive Gemeindearbeit EKHN
+2026-04-14 19:27:16,233 [INFO] main: OK: 15.03.2026 | 83.30 € | Inclusive Gemeindearbeit EKHN → Kollekten_2026_03.xlsx
+2026-04-14 19:27:16,376 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-14 19:27:16,464 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 20: 2026-03-08 | 134.00 € | 
+2026-04-14 19:27:16,465 [INFO] main: OK: 08.03.2026 | 134.00 € |  → Kollekten_2026_03.xlsx
+2026-04-14 19:27:16,601 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-14 19:27:16,683 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 21: 2026-03-01 | 82.00 € | Öffentlichkeitsarbeit eig. Gemeinde
+2026-04-14 19:27:16,685 [INFO] main: OK: 01.03.2026 | 82.00 € | Öffentlichkeitsarbeit eig. Gemeinde → Kollekten_2026_03.xlsx
+2026-04-14 19:27:16,824 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-14 19:27:16,912 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_02.xlsx
+2026-04-14 19:27:16,996 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17: 2026-02-28 | 95.00 € | Allgemeine Gemeindearbeit
+2026-04-14 19:27:16,996 [INFO] main: OK: 28.02.2026 | 95.00 € | Allgemeine Gemeindearbeit → Kollekten_2026_02.xlsx
+2026-04-14 19:27:17,221 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-14 19:27:17,309 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 18: 2026-02-22 | 50.00 € | Ev. Bund
+2026-04-14 19:27:17,310 [INFO] main: OK: 22.02.2026 | 50.00 € | Ev. Bund → Kollekten_2026_02.xlsx
+2026-04-14 19:27:17,452 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-14 19:27:17,453 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-14 19:27:17,596 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-14 19:27:17,680 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 19: 2026-02-01 | 31.00 € | Kirchenmusikalische Arbeit eigene Gemeinde
+2026-04-14 19:27:17,681 [INFO] main: OK: 01.02.2026 | 31.00 € | Kirchenmusikalische Arbeit eigene Gemeinde → Kollekten_2026_02.xlsx
+2026-04-14 19:27:17,819 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-14 19:27:17,899 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 21: 2026-01-25 | 77.24 € | Bibelhaus Erlebnismuseum
+2026-04-14 19:27:17,900 [INFO] main: OK: 25.01.2026 | 77.24 € | Bibelhaus Erlebnismuseum → Kollekten_2026_01.xlsx
+2026-04-14 19:27:18,035 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-14 19:27:18,122 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 22: 2026-01-08 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde
+2026-04-14 19:27:18,123 [INFO] main: OK: 08.01.2026 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde → Kollekten_2026_01.xlsx
+2026-04-14 19:27:18,263 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-14 19:27:18,348 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 23: 2026-01-11 | 61.00 € | Diakonie Hessen
+2026-04-14 19:27:18,349 [INFO] main: OK: 11.01.2026 | 61.00 € | Diakonie Hessen → Kollekten_2026_01.xlsx
+2026-04-14 19:27:18,523 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-14 19:27:18,605 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 24: 2026-01-04 | 10.00 € | JuLeiCa
+2026-04-14 19:27:18,606 [INFO] main: OK: 04.01.2026 | 10.00 € | JuLeiCa → Kollekten_2026_01.xlsx
+2026-04-14 19:27:18,766 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 18:19:13.816000+00:00)
+2026-04-14 19:27:18,885 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2015_12.xlsx
+2026-04-14 19:27:18,968 [INFO] excel_writer: Eingetragen in Kollekten_2015_12.xlsx Zeile 17: 2015-12-31 | 154.55 € | allgem. Gemeindearbeit
+2026-04-14 19:27:18,969 [INFO] main: OK: 31.12.2015 | 154.55 € | allgem. Gemeindearbeit → Kollekten_2015_12.xlsx
+2026-04-14 19:27:19,101 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 16:46:43.424000+00:00)
+2026-04-14 19:27:19,102 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB990000)
+2026-04-14 19:27:19,242 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 16:45:31.438000+00:00)
+2026-04-14 19:27:19,331 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2025_12.xlsx
+2026-04-14 19:27:19,417 [INFO] excel_writer: Eingetragen in Kollekten_2025_12.xlsx Zeile 17: 2025-12-28 | 50.00 € | mAqom Kirchenasyl 13
+2026-04-14 19:27:19,418 [INFO] main: OK: 28.12.2025 | 50.00 € | mAqom Kirchenasyl 13 → Kollekten_2025_12.xlsx
+2026-04-14 19:27:19,562 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-26 14:20:40.768000+00:00)
+2026-04-14 19:27:19,563 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB870000)
+2026-04-14 19:27:19,703 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-25 18:42:33.416000+00:00)
+2026-04-14 19:27:19,704 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB750000)
+2026-04-14 19:27:19,865 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-25 16:10:22.442000+00:00)
+2026-04-14 19:27:19,955 [INFO] excel_writer: Eingetragen in Kollekten_1995_12.xlsx Zeile 18: 1995-12-24 | 605.47 € | Brot für die Welt
+2026-04-14 19:27:19,956 [INFO] main: OK: 24.12.1995 | 605.47 € | Brot für die Welt → Kollekten_1995_12.xlsx
+2026-04-14 19:27:20,095 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-21 11:36:00.234000+00:00)
+2026-04-14 19:27:20,095 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB560000)
+2026-04-14 19:27:37,900 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 21 neue E-Mails, 0 bereits verarbeitet übersprungen.
+2026-04-14 19:27:37,903 [INFO] main: === Fertig: 16 verarbeitet, 5 Fehler ===
+2026-04-14 19:27:40,352 [INFO] main: === Kollekten-Automation gestartet (nur Jahr 2026) ===
+2026-04-14 19:27:53,722 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-14 19:27:53,825 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_04.xlsx
+2026-04-14 19:27:53,914 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17: 2026-04-03 | 147.29 € | Christl. Jüdische Verständigung
+2026-04-14 19:27:53,915 [INFO] main: OK: 03.04.2026 | 147.29 € | Christl. Jüdische Verständigung → Kollekten_2026_04.xlsx
+2026-04-14 19:27:54,055 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-14 19:27:54,144 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_03.xlsx
+2026-04-14 19:27:54,236 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17: 2026-03-29 | 147.70 € | Eigene Gemeinde
+2026-04-14 19:27:54,237 [INFO] main: OK: 29.03.2026 | 147.70 € | Eigene Gemeinde → Kollekten_2026_03.xlsx
+2026-04-14 19:27:54,533 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-14 19:27:54,621 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18: 2026-03-22 | 99.70 € | Stiftung für das Leben
+2026-04-14 19:27:54,622 [INFO] main: OK: 22.03.2026 | 99.70 € | Stiftung für das Leben → Kollekten_2026_03.xlsx
+2026-04-14 19:27:54,752 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-14 19:27:54,853 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19: 2026-03-15 | 83.30 € | Inclusive Gemeindearbeit EKHN
+2026-04-14 19:27:54,854 [INFO] main: OK: 15.03.2026 | 83.30 € | Inclusive Gemeindearbeit EKHN → Kollekten_2026_03.xlsx
+2026-04-14 19:27:54,991 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-14 19:27:55,079 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 20: 2026-03-08 | 134.00 € | 
+2026-04-14 19:27:55,080 [INFO] main: OK: 08.03.2026 | 134.00 € |  → Kollekten_2026_03.xlsx
+2026-04-14 19:27:55,215 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-14 19:27:55,306 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 21: 2026-03-01 | 82.00 € | Öffentlichkeitsarbeit eig. Gemeinde
+2026-04-14 19:27:55,308 [INFO] main: OK: 01.03.2026 | 82.00 € | Öffentlichkeitsarbeit eig. Gemeinde → Kollekten_2026_03.xlsx
+2026-04-14 19:27:55,438 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-14 19:27:55,527 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_02.xlsx
+2026-04-14 19:27:55,612 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17: 2026-02-28 | 95.00 € | Allgemeine Gemeindearbeit
+2026-04-14 19:27:55,614 [INFO] main: OK: 28.02.2026 | 95.00 € | Allgemeine Gemeindearbeit → Kollekten_2026_02.xlsx
+2026-04-14 19:27:55,832 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-14 19:27:55,924 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 18: 2026-02-22 | 50.00 € | Ev. Bund
+2026-04-14 19:27:55,925 [INFO] main: OK: 22.02.2026 | 50.00 € | Ev. Bund → Kollekten_2026_02.xlsx
+2026-04-14 19:27:56,054 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-14 19:27:56,055 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-14 19:27:56,181 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-14 19:27:56,272 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 19: 2026-02-01 | 31.00 € | Kirchenmusikalische Arbeit eigene Gemeinde
+2026-04-14 19:27:56,273 [INFO] main: OK: 01.02.2026 | 31.00 € | Kirchenmusikalische Arbeit eigene Gemeinde → Kollekten_2026_02.xlsx
+2026-04-14 19:27:56,406 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-14 19:27:56,498 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\Kollekten_2026_01.xlsx
+2026-04-14 19:27:56,587 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17: 2026-01-25 | 77.24 € | Bibelhaus Erlebnismuseum
+2026-04-14 19:27:56,588 [INFO] main: OK: 25.01.2026 | 77.24 € | Bibelhaus Erlebnismuseum → Kollekten_2026_01.xlsx
+2026-04-14 19:27:56,722 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-14 19:27:56,811 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18: 2026-01-08 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde
+2026-04-14 19:27:56,814 [INFO] main: OK: 08.01.2026 | 71.80 € | Kinder u. Jugendarbeit eigene Gemeinde → Kollekten_2026_01.xlsx
+2026-04-14 19:27:56,977 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-14 19:27:57,073 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 19: 2026-01-11 | 61.00 € | Diakonie Hessen
+2026-04-14 19:27:57,074 [INFO] main: OK: 11.01.2026 | 61.00 € | Diakonie Hessen → Kollekten_2026_01.xlsx
+2026-04-14 19:27:57,231 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-14 19:27:57,350 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 20: 2026-01-04 | 10.00 € | JuLeiCa
+2026-04-14 19:27:57,351 [INFO] main: OK: 04.01.2026 | 10.00 € | JuLeiCa → Kollekten_2026_01.xlsx
+2026-04-14 19:28:14,084 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 14 neue E-Mails, 0 bereits verarbeitet übersprungen.
+2026-04-14 19:28:14,087 [INFO] main: === Fertig: 13 verarbeitet, 1 Fehler ===
+2026-04-14 19:57:01,648 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 19:57:15,628 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 18:19:13.816000+00:00)
+2026-04-14 19:57:15,730 [INFO] excel_writer: Eingetragen in Kollekten_2015_12.xlsx Zeile 18: 2015-12-31 | 154.55 € | allgem. Gemeindearbeit
+2026-04-14 19:57:15,731 [INFO] main: OK: 31.12.2015 | 154.55 € | allgem. Gemeindearbeit → Kollekten_2015_12.xlsx
+2026-04-14 19:57:15,865 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 16:46:43.424000+00:00)
+2026-04-14 19:57:15,866 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB990000)
+2026-04-14 19:57:16,000 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-31 16:45:31.438000+00:00)
+2026-04-14 19:57:16,078 [INFO] excel_writer: Eingetragen in Kollekten_2025_12.xlsx Zeile 18: 2025-12-28 | 50.00 € | mAqom Kirchenasyl 13
+2026-04-14 19:57:16,079 [INFO] main: OK: 28.12.2025 | 50.00 € | mAqom Kirchenasyl 13 → Kollekten_2025_12.xlsx
+2026-04-14 19:57:16,211 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-26 14:20:40.768000+00:00)
+2026-04-14 19:57:16,212 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB870000)
+2026-04-14 19:57:16,338 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-25 18:42:33.416000+00:00)
+2026-04-14 19:57:16,338 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB750000)
+2026-04-14 19:57:16,466 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-25 16:10:22.442000+00:00)
+2026-04-14 19:57:16,548 [INFO] excel_writer: Eingetragen in Kollekten_1995_12.xlsx Zeile 19: 1995-12-24 | 605.47 € | Brot für die Welt
+2026-04-14 19:57:16,549 [INFO] main: OK: 24.12.1995 | 605.47 € | Brot für die Welt → Kollekten_1995_12.xlsx
+2026-04-14 19:57:16,675 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2025-12-21 11:36:00.234000+00:00)
+2026-04-14 19:57:16,675 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAB560000)
+2026-04-14 19:57:32,858 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 7 neue E-Mails, 14 bereits verarbeitet übersprungen.
+2026-04-14 19:57:32,861 [INFO] main: === Fertig: 3 verarbeitet, 4 Fehler ===
+2026-04-14 20:27:01,645 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 20:27:31,470 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue E-Mails, 21 bereits verarbeitet übersprungen.
+2026-04-14 20:27:31,473 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
+2026-04-14 20:57:01,627 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 20:57:32,664 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue E-Mails, 21 bereits verarbeitet übersprungen.
+2026-04-14 20:57:32,666 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
+2026-04-14 21:27:01,660 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 21:27:35,269 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue E-Mails, 21 bereits verarbeitet übersprungen.
+2026-04-14 21:27:35,272 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
+2026-04-14 21:57:01,655 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 21:57:34,523 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue E-Mails, 21 bereits verarbeitet übersprungen.
+2026-04-14 21:57:34,526 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
+2026-04-14 22:27:01,971 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-14 22:27:41,919 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue E-Mails, 21 bereits verarbeitet übersprungen.
+2026-04-14 22:27:41,923 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
+2026-04-14 22:57:02,011 [INFO] main: === Kollekten-Automation gestartet ===

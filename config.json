@@ -1,0 +1,11 @@
+{
+  "template_path": "D:\\Dokumente\\Doppik\\12 RV RLW - KGM Buchungsblatt Kollekten und Spenden eigene Gemeinde 2026 V3.0-PNC.xlsx",
+  "output_dir": "C:\\ai\\Buchungsblatt_kollekten",
+  "sender_email": "no-reply@ekhn.info",
+  "subject_filter": "Gottesdienststatistik",
+  "processed_emails_file": "C:\\ai\\Buchungsblatt_kollekten\\processed_emails.json",
+  "log_file": "C:\\ai\\Buchungsblatt_kollekten\\kollekten.log",
+  "rechtsträger_nr": "6840",
+  "bank_name": "Nassauische Sparkasse",
+  "bank_iban": "DE50 5105 0015 0656 2363 79"
+}

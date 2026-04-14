@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv pip:*)",
+      "Bash(uv venv:*)",
+      "Bash(.venv/Scripts/python.exe parser.py)",
+      "Bash(.venv/Scripts/python.exe -X utf8 parser.py)",
+      "Bash(ls \"c:/ai/Buchungsblatt_kollekten/\"*.py)",
+      "Bash(.venv/Scripts/python.exe scheduler_setup.py)",
+      "Bash(ls \"c:/ai/Buchungsblatt_kollekten/\"*.json)",
+      "Bash(ls \"c:/ai/Buchungsblatt_kollekten/\"*.xlsx)",
+      "Read(//c/ai/**)",
+      "Bash(.venv/Scripts/python.exe -X utf8 main.py --year 2026)",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(f'{len\\(d\\)} bereits verarbeitet'\\)\")",
+      "Bash(.venv/Scripts/python.exe -X utf8 debug_failed.py)",
+      "Bash(.venv/Scripts/python.exe -X utf8 -c ':*)",
+      "Bash(ls -1 \"c:/ai/Buchungsblatt_kollekten/Kollekten_2026_\"*.xlsx)",
+      "Bash(cd /c)",
+      "Bash(python)",
+      "WebFetch(domain:www.ekhn.de)",
+      "WebFetch(domain:unsure.ekhn.de)",
+      "WebFetch(domain:unsere.ekhn.de)"
+    ]
+  }
+}
