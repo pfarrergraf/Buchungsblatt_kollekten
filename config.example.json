@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "mail": {
+    "senders": [
+      "no-reply@ekhn.info"
+    ],
+    "subject_filter": "Gottesdienststatistik",
+    "recipient_emails": []
+  },
+  "organization": {
+    "rechtsträger_nr": "",
+    "bank_name": "",
+    "bank_iban": "",
+    "bank_bic": "",
+    "partner_defaults": {
+      "partner_nr": "",
+      "name_institution": "",
+      "anschrift": "",
+      "bankname": "",
+      "iban": "",
+      "bic": ""
+    }
+  },
+  "templates": {
+    "eigene_gemeinde": "",
+    "zur_weiterleitung": ""
+  },
+  "output": {
+    "root_dir": "C:\\ai\\Buchungsblatt_kollekten\\output",
+    "overview_file": "C:\\ai\\Buchungsblatt_kollekten\\output\\kollekten_uebersicht.xlsx"
+  },
+  "runtime": {
+    "log_file": "C:\\ai\\Buchungsblatt_kollekten\\kollekten.log"
+  },
+  "state": {
+    "processed_emails_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\state\\processed_emails.json",
+    "run_history_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\state\\run_history.json"
+  },
+  "reference_sources": {
+    "aobj_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\reference\\abrechnungsobjekte.json",
+    "rules_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\reference\\kollektenregeln.json",
+    "manual_overrides_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\reference\\manual_overrides.json",
+    "kollektenplan_url": "https://www.ekhn.de/themen/gottesdienst/gottesdienst-nachrichten/kollektenplan",
+    "year_plan_files": [],
+    "default_partner": {
+      "partner_nr": "",
+      "name_institution": "",
+      "anschrift": "",
+      "bankname": "",
+      "iban": "",
+      "bic": ""
+    }
+  },
+  "schedules": [
+    {
+      "name": "default",
+      "mode": "now",
+      "enabled": true,
+      "target": "run",
+      "time": "07:30",
+      "date": ""
+    }
+  ]
+}

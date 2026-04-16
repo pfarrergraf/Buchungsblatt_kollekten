@@ -19,7 +19,26 @@
       "Bash(python)",
       "WebFetch(domain:www.ekhn.de)",
       "WebFetch(domain:unsure.ekhn.de)",
-      "WebFetch(domain:unsere.ekhn.de)"
+      "WebFetch(domain:unsere.ekhn.de)",
+      "WebFetch(domain:github.com)",
+      "Read(//c/Users/Mein Computer/.claude/**)",
+      "Bash(python -c \"from config import get_config; cfg = get_config\\(\\); print\\('config OK'\\)\")",
+      "Bash(python -c ':*)",
+      "Bash(ls -la /c/ai/Buchungsblatt_kollekten/*.py)",
+      "Bash(.venv/Scripts/uv.exe pip:*)",
+      "Bash(.venv/Scripts/python.exe app_entry.py)",
+      "Bash(.venv/Scripts/python.exe -c ':*)",
+      "Bash(.venv/Scripts/python -c \"import PySide6; print\\('PySide6 OK'\\)\")",
+      "Bash(.venv/Scripts/python -c \"import pystray; print\\('pystray OK'\\)\")",
+      "Bash(.venv/Scripts/python -c \"import fastapi; print\\('fastapi OK'\\)\")",
+      "Bash(.venv/Scripts/python app_entry.py)",
+      "Bash(grep -rn \"TODO\\\\|FIXME\\\\|BUG\\\\|XXX\\\\|HACK\" /c/ai/Buchungsblatt_kollekten/*.py /c/ai/Buchungsblatt_kollekten/app/*.py)",
+      "Bash(python -c \"import py_compile, sys; files = ['collection_ops.py', 'app/widgets/collection_table.py', 'app/main_window.py', 'booking_store.py', 'file_actions.py', 'email_sender.py', 'app/documents.py', 'models.py', 'state_store.py', 'excel_writer.py', 'outlook_reader.py', 'main.py']; errors = []; [errors.append\\(f\\) or print\\(f'FEHLER: {f}: {e}'\\) for f in files for e in [None] if \\(lambda: py_compile.compile\\(f, doraise=True\\) or True\\)\\(\\) or True]; print\\('Syntax OK: alle Dateien'\\) if not errors else print\\(f'{len\\(errors\\)} Fehler'\\)\")",
+      "Bash(python -m py_compile collection_ops.py)",
+      "Bash(python -m py_compile app/widgets/collection_table.py)",
+      "Bash(python -m py_compile app/main_window.py)",
+      "Bash(python -m py_compile booking_store.py)",
+      "Bash(python -m py_compile app/documents.py)"
     ]
   }
 }

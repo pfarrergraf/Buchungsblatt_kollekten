@@ -1,0 +1,227 @@
+/* Kollekten-Automation PWA — Office-2010-inspiriertes Mobildesign */
+:root {
+  --blue:     #2B579A;
+  --blue-lt:  #3a6bbf;
+  --green:    #217346;
+  --red:      #c0392b;
+  --orange:   #e67e22;
+  --bg:       #f5f5f5;
+  --surface:  #ffffff;
+  --border:   #d0d0d0;
+  --text:     #222222;
+  --text-dim: #666666;
+  --radius:   6px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, system-ui, sans-serif;
+  font-size: 15px;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+header {
+  background: var(--blue);
+  color: #fff;
+  padding: 12px 16px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+header h1 { font-size: 17px; font-weight: 600; flex: 1; }
+#status-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #aaa;
+  flex-shrink: 0;
+}
+#status-dot.ok    { background: #7bc67e; }
+#status-dot.error { background: #ef9a9a; }
+#status-dot.run   { background: #ffe082; animation: blink .8s infinite; }
+@keyframes blink { 50% { opacity: .3; } }
+
+/* ── Tab-Nav ─────────────────────────────────────────────── */
+nav {
+  display: flex;
+  background: var(--blue);
+  border-top: 1px solid var(--blue-lt);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav button {
+  flex: 1;
+  min-width: 72px;
+  padding: 9px 6px 7px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(255,255,255,.7);
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+}
+nav button.active {
+  color: #fff;
+  border-bottom-color: #fff;
+  font-weight: 600;
+}
+
+/* ── Pages ───────────────────────────────────────────────── */
+main { padding: 12px; max-width: 640px; margin: 0 auto; }
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 10px;
+}
+.card h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+/* ── Stat-Grid ───────────────────────────────────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.stat {
+  background: #f0f4fb;
+  border-radius: 5px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.stat .val { font-size: 20px; font-weight: 700; color: var(--blue); }
+.stat .lbl { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity .15s;
+}
+.btn:active { opacity: .75; }
+.btn-primary  { background: var(--blue);  color: #fff; }
+.btn-success  { background: var(--green); color: #fff; }
+.btn-warning  { background: var(--orange); color: #fff; }
+.btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+
+/* ── Progress ─────────────────────────────────────────────── */
+#progress-box {
+  display: none;
+  background: #1a1a2e;
+  border-radius: var(--radius);
+  padding: 10px;
+  font-family: "Consolas", monospace;
+  font-size: 12px;
+  color: #a8ff78;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 8px;
+}
+#progress-box.visible { display: block; }
+#progress-box p { margin: 1px 0; }
+
+/* ── Table ───────────────────────────────────────────────── */
+.tbl-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th {
+  text-align: left;
+  padding: 7px 8px;
+  background: #e8eef6;
+  color: var(--blue);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+td {
+  padding: 7px 8px;
+  border-bottom: 1px solid #ececec;
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f7faff; }
+.warn-row td { background: #fff8e1; }
+.chip {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.chip-eigene  { background: #e8f5e9; color: var(--green); }
+.chip-weiter  { background: #e3f2fd; color: #1565c0; }
+.chip-warn    { background: #fff3cd; color: #856404; }
+
+/* ── Filter Bar ──────────────────────────────────────────── */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.filter-row select, .filter-row input {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  font-size: 13px;
+  background: var(--surface);
+  color: var(--text);
+}
+.filter-row label { font-size: 13px; display: flex; align-items: center; gap: 4px; }
+
+/* ── Empty State ─────────────────────────────────────────── */
+.empty {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 32px;
+  font-size: 14px;
+}
+
+/* ── Toast ───────────────────────────────────────────────── */
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  transition: transform .3s;
+  z-index: 200;
+  max-width: 90vw;
+  text-align: center;
+}
+#toast.show { transform: translateX(-50%) translateY(0); }

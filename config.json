@@ -1,11 +1,95 @@
 {
-  "template_path": "D:\\Dokumente\\Doppik\\12 RV RLW - KGM Buchungsblatt Kollekten und Spenden eigene Gemeinde 2026 V3.0-PNC.xlsx",
-  "output_dir": "C:\\ai\\Buchungsblatt_kollekten",
-  "sender_email": "no-reply@ekhn.info",
-  "subject_filter": "Gottesdienststatistik",
-  "processed_emails_file": "C:\\ai\\Buchungsblatt_kollekten\\processed_emails.json",
-  "log_file": "C:\\ai\\Buchungsblatt_kollekten\\kollekten.log",
-  "rechtsträger_nr": "6840",
-  "bank_name": "Nassauische Sparkasse",
-  "bank_iban": "DE50 5105 0015 0656 2363 79"
+  "version": 2,
+  "mail": {
+    "senders": [
+      "no-reply@ekhn.info"
+    ],
+    "subject_filter": "Gottesdienststatistik",
+    "recipient_emails": [
+      "benjamin.graf@ekhn.de"
+    ]
+  },
+  "organization": {
+    "rechtsträger_nr": "6840",
+    "bank_name": "Nassauische Sparkasse",
+    "bank_iban": "DE50 5105 0015 0656 2363 79",
+    "bank_bic": "NASSDE55XXX",
+    "partner_defaults": {
+      "partner_nr": "",
+      "name_institution": "",
+      "anschrift": "",
+      "bankname": "",
+      "iban": "",
+      "bic": ""
+    },
+    "gemeinde_name": "Evangelische Kirchengemeinde Oberlahnstein"
+  },
+  "templates": {
+    "eigene_gemeinde": "C:\\Users\\Mein Computer\\Downloads\\12 RV RLW - KGM Buchungsblatt Kollekten und Spenden eigene Gemeinde 2026 V3.0-PNC.xlsx",
+    "zur_weiterleitung": "C:\\Users\\Mein Computer\\Downloads\\12 RV RLW - KGM Buchungsblatt Kollekten und Spenden zur Weiterleitung 2026 V3.0-PNC.xlsx"
+  },
+  "output": {
+    "root_dir": "C:\\ai\\Buchungsblatt_kollekten\\output",
+    "overview_file": "C:\\ai\\Buchungsblatt_kollekten\\output\\kollekten_uebersicht.xlsx"
+  },
+  "runtime": {
+    "log_file": "C:\\ai\\Buchungsblatt_kollekten\\kollekten.log"
+  },
+  "state": {
+    "processed_emails_file": "C:\\ai\\Buchungsblatt_kollekten\\processed_emails.json",
+    "run_history_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\state\\run_history.json"
+  },
+  "reference_sources": {
+    "aobj_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\reference\\abrechnungsobjekte.json",
+    "rules_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\reference\\kollektenregeln.json",
+    "manual_overrides_file": "C:\\ai\\Buchungsblatt_kollekten\\data\\reference\\manual_overrides.json",
+    "kollektenplan_url": "",
+    "year_plan_files": [],
+    "default_partner": {
+      "partner_nr": "",
+      "name_institution": "",
+      "anschrift": "",
+      "bankname": "",
+      "iban": "",
+      "bic": ""
+    }
+  },
+  "schedules": [
+    {
+      "name": "default",
+      "mode": "now",
+      "enabled": true,
+      "target": "run",
+      "time": "07:30",
+      "date": "",
+      "monthly_day": "first",
+      "quarter_interval_months": 3,
+      "command": ""
+    }
+  ],
+  "app": {
+    "use_tray": false,
+    "autostart": false,
+    "font_size": 10,
+    "theme": "office2010"
+  },
+  "ai": {
+    "provider": "lmstudio",
+    "api_key": "sk-lm-h7dxg0Mn:l0E3s1NbtvjCD5RKQ7iA",
+    "model": "qwen2.5-72b-instruct",
+    "base_url": "http://10.209.123.209:1234/v1",
+    "openrouter_base_url": "http://10.209.123.209:1234/v1",
+    "ollama_base_url": "http://localhost:11434/v1",
+    "lmstudio_base_url": "http://localhost:1234/v1"
+  },
+  "document_sources": [],
+  "api": {
+    "enabled": false,
+    "port": 8765,
+    "token": "",
+    "allow_run": true,
+    "cors_origins": [
+      "*"
+    ]
+  }
 }

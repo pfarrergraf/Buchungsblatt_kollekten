@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "patterns": [
+    {
+      "pattern": "eigene Gemeinde",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0110"
+    },
+    {
+      "pattern": "Gottesdienst",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0110"
+    },
+    {
+      "pattern": "Kirchenmusik",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0210"
+    },
+    {
+      "pattern": "kirchenmusikal",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0210"
+    },
+    {
+      "pattern": "Kirchenmusikalische Arbeit",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0210"
+    },
+    {
+      "pattern": "Chor",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0220"
+    },
+    {
+      "pattern": "Konfirm",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0420"
+    },
+    {
+      "pattern": "Kinder u. Jugendarbeit",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0430"
+    },
+    {
+      "pattern": "Kinder-u. Jugendarbeit",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0430"
+    },
+    {
+      "pattern": "Allgemeine Gemeindearbeit",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0510"
+    },
+    {
+      "pattern": "allgem. Gemeindearbeit",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0510"
+    },
+    {
+      "pattern": "Öffentlichkeitsarbeit eig. Gemeinde",
+      "scope": "eigene_gemeinde",
+      "booking_type": "Kollekten",
+      "aobj": "0510"
+    },
+    {
+      "pattern": "Bibelhaus",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Brot für die Welt",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Christl. Jüdische Verständigung",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Diakonie",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Inclusive Gemeindearbeit EKHN",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "JuLeiCa",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Stiftung",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Ev. Bund",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Jüdische Verständigung",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "mAqom",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    },
+    {
+      "pattern": "Kirchenasyl",
+      "scope": "zur_weiterleitung",
+      "booking_type": "Kollekten"
+    }
+  ],
+  "fallback": {
+    "scope": "eigene_gemeinde",
+    "booking_type": "Kollekten",
+    "aobj": "0110",
+    "sachkonto": ""
+  }
+}

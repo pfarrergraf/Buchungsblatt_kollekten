@@ -1,0 +1,13 @@
+Kollekten-Automation — Lizenz
+===============================
+
+Dieses Programm ist Freeware und darf kostenlos von evangelischen
+Kirchengemeinden (insbesondere der EKHN) genutzt werden.
+
+Es wird ohne Garantie und ohne Support bereitgestellt.
+Die Nutzung erfolgt auf eigene Verantwortung.
+
+Wenn das Programm hilfreich ist, freuen wir uns über eine Spende
+an Ihre Kirchengemeinde oder eine Ihrer Wahl.
+
+Kontakt und Quellcode: https://github.com/PLACEHOLDER/kollekten-automation

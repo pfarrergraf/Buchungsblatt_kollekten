@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2B579A">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kollekten">
+  <title>Kollekten-Automation</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  <span id="status-dot"></span>
+  <h1>Kollekten-Automation</h1>
+  <span id="version-lbl" style="font-size:11px;opacity:.7"></span>
+</header>
+
+<nav>
+  <button data-page="page-uebersicht" class="active">Übersicht</button>
+  <button data-page="page-kollekten">Kollekten</button>
+  <button data-page="page-einstellungen">Einst.</button>
+</nav>
+
+<main>
+
+  <!-- ── Übersicht ──────────────────────────────────────────────────────── -->
+  <div id="page-uebersicht" class="page active">
+
+    <div class="card">
+      <h2>Gemeinde</h2>
+      <div id="gemeinde-name" style="font-size:17px;font-weight:600;color:#2B579A">Lädt…</div>
+      <div style="margin-top:6px;font-size:12px;color:#666">
+        Letzter Lauf: <span id="last-run">—</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Letzter Lauf</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="val" id="last-processed">—</div>
+          <div class="lbl">Verarbeitet</div>
+        </div>
+        <div class="stat">
+          <div class="val" id="last-errors">—</div>
+          <div class="lbl">Fehler</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Aktueller Monat</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="val" id="sum-eigene">—</div>
+          <div class="lbl">Eigene Gemeinde</div>
+        </div>
+        <div class="stat">
+          <div class="val" id="sum-weiter">—</div>
+          <div class="lbl">Weiterleitung</div>
+        </div>
+        <div class="stat">
+          <div class="val" id="sum-gesamt">—</div>
+          <div class="lbl">Gesamt</div>
+        </div>
+        <div class="stat">
+          <div class="val" id="sum-count">—</div>
+          <div class="lbl">Einträge</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Ausführung</h2>
+      <div class="btn-row">
+        <button id="btn-run" class="btn btn-primary">▶ Jetzt ausführen</button>
+        <button id="btn-dry" class="btn btn-warning">👁 Vorschau</button>
+      </div>
+      <div id="progress-box"></div>
+    </div>
+
+  </div><!-- /page-uebersicht -->
+
+  <!-- ── Kollekten-Liste ────────────────────────────────────────────────── -->
+  <div id="page-kollekten" class="page">
+
+    <div class="filter-row">
+      <select id="filter-month">
+        <option value="">Alle Monate</option>
+      </select>
+      <select id="filter-year">
+        <option value="">Alle Jahre</option>
+      </select>
+      <label>
+        <input type="checkbox" id="filter-warn">
+        Nur Warnungen
+      </label>
+    </div>
+
+    <div class="card" style="padding:0">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Betrag</th>
+              <th>Zweck</th>
+              <th>Typ</th>
+              <th>AObj</th>
+            </tr>
+          </thead>
+          <tbody id="kollekten-tbody">
+            <tr><td colspan="5" class="empty">Lädt…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /page-kollekten -->
+
+  <!-- ── Einstellungen ──────────────────────────────────────────────────── -->
+  <div id="page-einstellungen" class="page">
+
+    <div class="card">
+      <h2>Zugang</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:10px">
+        Falls der Server mit einem Bearer-Token gesichert ist, trage ihn hier ein.
+        Er wird nur lokal im Browser gespeichert.
+      </p>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="inp-token" type="password" placeholder="Bearer-Token (optional)"
+          style="flex:1;border:1px solid #ccc;border-radius:6px;padding:8px 10px;font-size:14px">
+        <button id="btn-save-token" class="btn btn-primary">Speichern</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Über</h2>
+      <p style="font-size:13px;color:#666;line-height:1.6">
+        Kollekten-Automation — Kirchliche Kollektenverwaltung<br>
+        Smartphone-App (PWA) für lokalen Netzwerkzugriff.<br><br>
+        Installieren: Menü → <em>Zum Startbildschirm hinzufügen</em>
+      </p>
+    </div>
+
+  </div><!-- /page-einstellungen -->
+
+</main>
+
+<div id="toast"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>

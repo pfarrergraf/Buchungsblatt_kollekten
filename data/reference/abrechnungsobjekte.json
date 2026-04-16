@@ -1,0 +1,45 @@
+[
+  {
+    "code": "0110",
+    "label": "Gottesdienst",
+    "sachkonto": "",
+    "category": "liturgie"
+  },
+  {
+    "code": "0210",
+    "label": "allg. kirchenmusikalischer Dienst",
+    "sachkonto": "",
+    "category": "musik"
+  },
+  {
+    "code": "0220",
+    "label": "Chorarbeit",
+    "sachkonto": "",
+    "category": "musik"
+  },
+  {
+    "code": "0410",
+    "label": "Christenlehre",
+    "sachkonto": "",
+    "category": "unterricht"
+  },
+  {
+    "code": "0420",
+    "label": "Konfirmandenunterricht",
+    "sachkonto": "",
+    "category": "unterricht"
+  },
+  {
+    "code": "0430",
+    "label": "Kinder- und Jugendarbeit",
+    "sachkonto": "",
+    "category": "jugend"
+  },
+  {
+    "code": "0510",
+    "label": "Allgemeine Gemeindearbeit",
+    "sachkonto": "",
+    "category": "gemeinde"
+  }
+]
+

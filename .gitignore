@@ -1,0 +1,23 @@
+# Lokale Konfiguration und Laufdaten
+config.json
+config.local.json
+config.example.local.json
+
+# Generierte Excel-Dateien und Uebersichten
+output/
+Kollekten_*.xlsx
+kollekten_uebersicht.xlsx
+
+# Laufzeit- und Cache-Dateien
+*.log
+processed_emails.json
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Zentrale Datenverzeichnisse fuer State
+data/state/
+

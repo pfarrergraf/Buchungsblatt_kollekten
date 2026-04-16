@@ -310,3 +310,631 @@
 2026-04-14 22:27:41,919 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 0 neue E-Mails, 21 bereits verarbeitet übersprungen.
 2026-04-14 22:27:41,923 [INFO] main: === Fertig: 0 verarbeitet, 0 Fehler ===
 2026-04-14 22:57:02,011 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-15 00:12:14,671 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-15 00:12:18,654 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-15 00:12:33,316 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-15 00:12:33,448 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_04.xlsx
+2026-04-15 00:12:33,552 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17
+2026-04-15 00:12:33,565 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004DCE2E0D40000: Excel does not support timezones in datetimes. The tzinfo in the datetime/time object must be set to None.
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 24, in write_collection
+    return _write_forwarding(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 73, in _write_forwarding
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 71, in upsert_overview_record
+    wb.save(p)
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 294, in save_workbook
+    writer.save()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 275, in save
+    self.write_data()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 77, in write_data
+    self._write_worksheets()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 215, in _write_worksheets
+    self.write_worksheet(ws)
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 200, in write_worksheet
+    writer.write()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\worksheet\_writer.py", line 359, in write
+    self.write_rows()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\worksheet\_writer.py", line 125, in write_rows
+    self.write_row(xf, row, row_idx)
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\worksheet\_writer.py", line 147, in write_row
+    write_cell(xf, self.ws, cell, cell.has_style)
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\cell\_writer.py", line 47, in etree_write_cell
+    value, attributes = _set_attributes(cell, styled)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\cell\_writer.py", line 30, in _set_attributes
+    raise TypeError("Excel does not support timezones in datetimes. "
+TypeError: Excel does not support timezones in datetimes. The tzinfo in the datetime/time object must be set to None.
+2026-04-15 00:12:33,708 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-15 00:12:33,822 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_03.xlsx
+2026-04-15 00:12:33,922 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:12:33,922 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004DCE2E0D50000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 25, in write_collection
+    return _write_own(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 46, in _write_own
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:34,229 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-15 00:12:34,358 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_03.xlsx
+2026-04-15 00:12:34,460 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:12:34,461 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004D4963F840000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 24, in write_collection
+    return _write_forwarding(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 73, in _write_forwarding
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:34,601 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-15 00:12:34,725 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:12:34,727 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AF0050000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 24, in write_collection
+    return _write_forwarding(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 73, in _write_forwarding
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:34,868 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-15 00:12:34,965 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:12:34,965 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEFB80000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 25, in write_collection
+    return _write_own(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 46, in _write_own
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:35,102 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-15 00:12:35,204 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19
+2026-04-15 00:12:35,205 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF850000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 25, in write_collection
+    return _write_own(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 46, in _write_own
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:35,347 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-15 00:12:35,451 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_02.xlsx
+2026-04-15 00:12:35,570 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:12:35,571 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF860000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 25, in write_collection
+    return _write_own(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 46, in _write_own
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:35,792 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-15 00:12:35,909 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_02.xlsx
+2026-04-15 00:12:36,047 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:12:36,048 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEF050000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 24, in write_collection
+    return _write_forwarding(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 73, in _write_forwarding
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:36,185 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-15 00:12:36,187 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-15 00:12:36,322 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-15 00:12:36,428 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 18
+2026-04-15 00:12:36,428 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004AA3E20F80000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 25, in write_collection
+    return _write_own(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 46, in _write_own
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:36,565 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-15 00:12:36,673 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_01.xlsx
+2026-04-15 00:12:36,790 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:12:36,791 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004AA3E20B30000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 24, in write_collection
+    return _write_forwarding(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 73, in _write_forwarding
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:36,931 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-15 00:12:37,055 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_01.xlsx
+2026-04-15 00:12:37,155 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:12:37,156 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004AA3E20B40000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 25, in write_collection
+    return _write_own(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 46, in _write_own
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:37,299 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-15 00:12:37,402 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18
+2026-04-15 00:12:37,403 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004A56C198F0000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 24, in write_collection
+    return _write_forwarding(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 73, in _write_forwarding
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:37,574 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-15 00:12:37,680 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 19
+2026-04-15 00:12:37,681 [ERROR] main: Fehler bei EntryID 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004863CAC4F0000: "There is no item named '[Content_Types].xml' in the archive"
+Traceback (most recent call last):
+  File "C:\ai\Buchungsblatt_kollekten\main.py", line 60, in run
+    dest = write_collection(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 24, in write_collection
+    return _write_forwarding(record, cfg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\excel_writer.py", line 73, in _write_forwarding
+    upsert_overview_record(cfg["output"]["overview_file"], record, monthly_path.name)
+  File "C:\ai\Buchungsblatt_kollekten\overview.py", line 53, in upsert_overview_record
+    wb = openpyxl.load_workbook(p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 348, in load_workbook
+    reader.read()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_manifest()
+  File "C:\ai\Buchungsblatt_kollekten\.venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1571, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1608, in open
+    zinfo = self.getinfo(name)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mein Computer\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\zipfile\__init__.py", line 1536, in getinfo
+    raise KeyError(
+KeyError: "There is no item named '[Content_Types].xml' in the archive"
+2026-04-15 00:12:58,148 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 14 neue E-Mails, 0 bereits verarbeitet uebersprungen.
+2026-04-15 00:12:58,151 [INFO] main: === Fertig: 0 verarbeitet, 14 Fehler ===
+2026-04-15 00:13:12,189 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-15 00:13:24,412 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-15 00:13:24,533 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_04.xlsx
+2026-04-15 00:13:24,641 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17
+2026-04-15 00:13:24,678 [INFO] main: OK: 03.04.2026 | 147.29 EUR | Christl. Jüdische Verständigung -> Kollekten_2026_04.xlsx
+2026-04-15 00:13:24,819 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-15 00:13:24,921 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_03.xlsx
+2026-04-15 00:13:25,027 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:13:25,043 [INFO] main: OK: 29.03.2026 | 147.70 EUR | Eigene Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:13:25,348 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-15 00:13:25,478 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_03.xlsx
+2026-04-15 00:13:25,594 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:13:25,611 [INFO] main: OK: 22.03.2026 | 99.70 EUR | Stiftung für das Leben -> Kollekten_2026_03.xlsx
+2026-04-15 00:13:25,750 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-15 00:13:25,852 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:13:25,867 [INFO] main: OK: 15.03.2026 | 83.30 EUR | Inclusive Gemeindearbeit EKHN -> Kollekten_2026_03.xlsx
+2026-04-15 00:13:26,005 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-15 00:13:26,119 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:13:26,137 [INFO] main: OK: 08.03.2026 | 134.00 EUR |  -> Kollekten_2026_03.xlsx
+2026-04-15 00:13:26,272 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-15 00:13:26,383 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19
+2026-04-15 00:13:26,397 [INFO] main: OK: 01.03.2026 | 82.00 EUR | Öffentlichkeitsarbeit eig. Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:13:26,532 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-15 00:13:26,638 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_02.xlsx
+2026-04-15 00:13:26,735 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:13:26,753 [INFO] main: OK: 28.02.2026 | 95.00 EUR | Allgemeine Gemeindearbeit -> Kollekten_2026_02.xlsx
+2026-04-15 00:13:26,972 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-15 00:13:27,093 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_02.xlsx
+2026-04-15 00:13:27,217 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:13:27,236 [INFO] main: OK: 22.02.2026 | 50.00 EUR | Ev. Bund -> Kollekten_2026_02.xlsx
+2026-04-15 00:13:27,375 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-15 00:13:27,375 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-15 00:13:27,507 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-15 00:13:27,618 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 18
+2026-04-15 00:13:27,636 [INFO] main: OK: 01.02.2026 | 31.00 EUR | Kirchenmusikalische Arbeit eigene Gemeinde -> Kollekten_2026_02.xlsx
+2026-04-15 00:13:27,777 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-15 00:13:27,884 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_01.xlsx
+2026-04-15 00:13:27,997 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:13:28,017 [INFO] main: OK: 25.01.2026 | 77.24 EUR | Bibelhaus Erlebnismuseum -> Kollekten_2026_01.xlsx
+2026-04-15 00:13:28,154 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-15 00:13:28,269 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_01.xlsx
+2026-04-15 00:13:28,375 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:13:28,393 [INFO] main: OK: 08.01.2026 | 71.80 EUR | Kinder u. Jugendarbeit eigene Gemeinde -> Kollekten_2026_01.xlsx
+2026-04-15 00:13:28,531 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-15 00:13:28,634 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18
+2026-04-15 00:13:28,656 [INFO] main: OK: 11.01.2026 | 61.00 EUR | Diakonie Hessen -> Kollekten_2026_01.xlsx
+2026-04-15 00:13:28,811 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-15 00:13:28,917 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 19
+2026-04-15 00:13:28,934 [INFO] main: OK: 04.01.2026 | 10.00 EUR | JuLeiCa -> Kollekten_2026_01.xlsx
+2026-04-15 00:13:45,900 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 14 neue E-Mails, 0 bereits verarbeitet uebersprungen.
+2026-04-15 00:13:45,906 [INFO] main: === Fertig: 13 verarbeitet, 1 Fehler ===
+2026-04-15 00:15:18,250 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-15 00:15:30,594 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-15 00:15:30,717 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_04.xlsx
+2026-04-15 00:15:30,836 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17
+2026-04-15 00:15:30,872 [INFO] main: OK: 03.04.2026 | 147.29 EUR | Christl. Jüdische Verständigung -> Kollekten_2026_04.xlsx
+2026-04-15 00:15:31,020 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-15 00:15:31,123 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_03.xlsx
+2026-04-15 00:15:31,226 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:15:31,244 [INFO] main: OK: 29.03.2026 | 147.70 EUR | Eigene Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:15:31,554 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-15 00:15:31,683 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_03.xlsx
+2026-04-15 00:15:31,795 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:15:31,813 [INFO] main: OK: 22.03.2026 | 99.70 EUR | Stiftung für das Leben -> Kollekten_2026_03.xlsx
+2026-04-15 00:15:31,949 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-15 00:15:32,070 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:15:32,085 [INFO] main: OK: 15.03.2026 | 83.30 EUR | Inclusive Gemeindearbeit EKHN -> Kollekten_2026_03.xlsx
+2026-04-15 00:15:32,223 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-15 00:15:32,323 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:15:32,338 [INFO] main: OK: 08.03.2026 | 134.00 EUR |  -> Kollekten_2026_03.xlsx
+2026-04-15 00:15:32,471 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-15 00:15:32,572 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19
+2026-04-15 00:15:32,589 [INFO] main: OK: 01.03.2026 | 82.00 EUR | Öffentlichkeitsarbeit eig. Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:15:32,727 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-15 00:15:32,845 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_02.xlsx
+2026-04-15 00:15:32,935 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:15:32,952 [INFO] main: OK: 28.02.2026 | 95.00 EUR | Allgemeine Gemeindearbeit -> Kollekten_2026_02.xlsx
+2026-04-15 00:15:33,183 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-15 00:15:33,300 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_02.xlsx
+2026-04-15 00:15:33,423 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:15:33,440 [INFO] main: OK: 22.02.2026 | 50.00 EUR | Ev. Bund -> Kollekten_2026_02.xlsx
+2026-04-15 00:15:33,579 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-15 00:15:33,580 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-15 00:15:33,723 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-15 00:15:33,830 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 18
+2026-04-15 00:15:33,850 [INFO] main: OK: 01.02.2026 | 31.00 EUR | Kirchenmusikalische Arbeit eigene Gemeinde -> Kollekten_2026_02.xlsx
+2026-04-15 00:15:33,992 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-15 00:15:34,115 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_01.xlsx
+2026-04-15 00:15:34,227 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:15:34,247 [INFO] main: OK: 25.01.2026 | 77.24 EUR | Bibelhaus Erlebnismuseum -> Kollekten_2026_01.xlsx
+2026-04-15 00:15:34,386 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-15 00:15:34,480 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_01.xlsx
+2026-04-15 00:15:34,573 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:15:34,590 [INFO] main: OK: 08.01.2026 | 71.80 EUR | Kinder u. Jugendarbeit eigene Gemeinde -> Kollekten_2026_01.xlsx
+2026-04-15 00:15:34,725 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-15 00:15:34,815 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18
+2026-04-15 00:15:34,831 [INFO] main: OK: 11.01.2026 | 61.00 EUR | Diakonie Hessen -> Kollekten_2026_01.xlsx
+2026-04-15 00:15:34,984 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-15 00:15:35,077 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 19
+2026-04-15 00:15:35,095 [INFO] main: OK: 04.01.2026 | 10.00 EUR | JuLeiCa -> Kollekten_2026_01.xlsx
+2026-04-15 00:15:51,638 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 14 neue E-Mails, 0 bereits verarbeitet uebersprungen.
+2026-04-15 00:15:51,640 [INFO] main: === Fertig: 13 verarbeitet, 1 Fehler ===
+2026-04-15 00:21:16,902 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-15 00:21:28,578 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-15 00:21:28,679 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_04.xlsx
+2026-04-15 00:21:28,768 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17
+2026-04-15 00:21:28,787 [INFO] main: OK: 03.04.2026 | 147.29 EUR | Christl. Jüdische Verständigung -> Kollekten_2026_04.xlsx
+2026-04-15 00:21:28,925 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-15 00:21:29,012 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_03.xlsx
+2026-04-15 00:21:29,100 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:21:29,115 [INFO] main: OK: 29.03.2026 | 147.70 EUR | Eigene Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:21:29,419 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-15 00:21:29,533 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_03.xlsx
+2026-04-15 00:21:29,620 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:21:29,633 [INFO] main: OK: 22.03.2026 | 99.70 EUR | Stiftung für das Leben -> Kollekten_2026_03.xlsx
+2026-04-15 00:21:29,771 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-15 00:21:29,862 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:21:29,877 [INFO] main: OK: 15.03.2026 | 83.30 EUR | Inclusive Gemeindearbeit EKHN -> Kollekten_2026_03.xlsx
+2026-04-15 00:21:30,008 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-15 00:21:30,095 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:21:30,109 [INFO] main: OK: 08.03.2026 | 134.00 EUR |  -> Kollekten_2026_03.xlsx
+2026-04-15 00:21:30,243 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-15 00:21:30,331 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19
+2026-04-15 00:21:30,346 [INFO] main: OK: 01.03.2026 | 82.00 EUR | Öffentlichkeitsarbeit eig. Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:21:30,478 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-15 00:21:30,570 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_02.xlsx
+2026-04-15 00:21:30,655 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:21:30,669 [INFO] main: OK: 28.02.2026 | 95.00 EUR | Allgemeine Gemeindearbeit -> Kollekten_2026_02.xlsx
+2026-04-15 00:21:30,883 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-15 00:21:30,984 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_02.xlsx
+2026-04-15 00:21:31,092 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:21:31,106 [INFO] main: OK: 22.02.2026 | 50.00 EUR | Ev. Bund -> Kollekten_2026_02.xlsx
+2026-04-15 00:21:31,238 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-15 00:21:31,238 [WARNING] main: E-Mail konnte nicht geparst werden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000)
+2026-04-15 00:21:31,372 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-15 00:21:31,459 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 18
+2026-04-15 00:21:31,475 [INFO] main: OK: 01.02.2026 | 31.00 EUR | Kirchenmusikalische Arbeit eigene Gemeinde -> Kollekten_2026_02.xlsx
+2026-04-15 00:21:31,606 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-15 00:21:31,700 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_01.xlsx
+2026-04-15 00:21:31,790 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:21:31,805 [INFO] main: OK: 25.01.2026 | 77.24 EUR | Bibelhaus Erlebnismuseum -> Kollekten_2026_01.xlsx
+2026-04-15 00:21:31,935 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-15 00:21:32,024 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_01.xlsx
+2026-04-15 00:21:32,107 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:21:32,121 [INFO] main: OK: 08.01.2026 | 71.80 EUR | Kinder u. Jugendarbeit eigene Gemeinde -> Kollekten_2026_01.xlsx
+2026-04-15 00:21:32,258 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-15 00:21:32,346 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18
+2026-04-15 00:21:32,364 [INFO] main: OK: 11.01.2026 | 61.00 EUR | Diakonie Hessen -> Kollekten_2026_01.xlsx
+2026-04-15 00:21:32,518 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-15 00:21:32,609 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 19
+2026-04-15 00:21:32,626 [INFO] main: OK: 04.01.2026 | 10.00 EUR | JuLeiCa -> Kollekten_2026_01.xlsx
+2026-04-15 00:21:49,229 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 14 neue E-Mails, 0 bereits verarbeitet uebersprungen.
+2026-04-15 00:21:49,232 [INFO] main: === Fertig: 13 verarbeitet, 1 Fehler ===
+2026-04-15 00:39:43,446 [INFO] main: === Kollekten-Automation gestartet ===
+2026-04-15 00:39:54,908 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:30:37.827000+00:00)
+2026-04-15 00:39:55,011 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_04.xlsx
+2026-04-15 00:39:55,099 [INFO] excel_writer: Eingetragen in Kollekten_2026_04.xlsx Zeile 17
+2026-04-15 00:39:55,117 [INFO] main: OK: 03.04.2026 | 147.29 EUR | Christl. Jüdische Verständigung -> Kollekten_2026_04.xlsx
+2026-04-15 00:39:55,248 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-04-03 16:25:51.333000+00:00)
+2026-04-15 00:39:55,336 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_03.xlsx
+2026-04-15 00:39:55,420 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:39:55,434 [INFO] main: OK: 29.03.2026 | 147.70 EUR | Eigene Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:39:55,725 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-22 11:32:05.635000+00:00)
+2026-04-15 00:39:55,836 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_03.xlsx
+2026-04-15 00:39:55,925 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 17
+2026-04-15 00:39:55,938 [INFO] main: OK: 22.03.2026 | 99.70 EUR | Stiftung für das Leben -> Kollekten_2026_03.xlsx
+2026-04-15 00:39:56,070 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-15 12:03:32.319000+00:00)
+2026-04-15 00:39:56,164 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:39:56,180 [INFO] main: OK: 15.03.2026 | 83.30 EUR | Inclusive Gemeindearbeit EKHN -> Kollekten_2026_03.xlsx
+2026-04-15 00:39:56,314 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-08 12:14:07.728000+00:00)
+2026-04-15 00:39:56,401 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 18
+2026-04-15 00:39:56,416 [INFO] main: OK: 08.03.2026 | 134.00 EUR |  -> Kollekten_2026_03.xlsx
+2026-04-15 00:39:56,549 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:40:22.791000+00:00)
+2026-04-15 00:39:56,636 [INFO] excel_writer: Eingetragen in Kollekten_2026_03.xlsx Zeile 19
+2026-04-15 00:39:56,652 [INFO] main: OK: 01.03.2026 | 82.00 EUR | Öffentlichkeitsarbeit eig. Gemeinde -> Kollekten_2026_03.xlsx
+2026-04-15 00:39:56,788 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-03-01 11:38:41.163000+00:00)
+2026-04-15 00:39:56,879 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_02.xlsx
+2026-04-15 00:39:56,964 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:39:56,978 [INFO] main: OK: 28.02.2026 | 95.00 EUR | Allgemeine Gemeindearbeit -> Kollekten_2026_02.xlsx
+2026-04-15 00:39:57,184 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-22 13:53:10.295000+00:00)
+2026-04-15 00:39:57,281 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_02.xlsx
+2026-04-15 00:39:57,399 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 17
+2026-04-15 00:39:57,418 [INFO] main: OK: 22.02.2026 | 50.00 EUR | Ev. Bund -> Kollekten_2026_02.xlsx
+2026-04-15 00:39:57,549 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-08 12:07:49.610000+00:00)
+2026-04-15 00:39:57,549 [WARNING] main: Kein Betrag gefunden (EntryID: 00000000709CC58678EE284F86AA07B6BF51A59B07000AFE130D7EB1474C80A21F25BDBB3F59007B7AA2443800003ED6CC2C4045174EB550618D417715A10004B94AEE680000, Gottesdienst: 08.02.26, Letzte Zeile: 'Öffentlichkeitsarbeit eigene Gemeinde')
+2026-04-15 00:39:58,159 [INFO] email_sender: Benachrichtigung gesendet an ['benjamin.graf@ekhn.de']: Kollekte unvollständig – Betrag fehlt (08.02.26)
+2026-04-15 00:39:58,436 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-02-01 11:17:59.718000+00:00)
+2026-04-15 00:39:58,524 [INFO] excel_writer: Eingetragen in Kollekten_2026_02.xlsx Zeile 18
+2026-04-15 00:39:58,539 [INFO] main: OK: 01.02.2026 | 31.00 EUR | Kirchenmusikalische Arbeit eigene Gemeinde -> Kollekten_2026_02.xlsx
+2026-04-15 00:39:58,781 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 11:31:39.648000+00:00)
+2026-04-15 00:39:58,878 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\zur_weiterleitung\Kollekten_2026_01.xlsx
+2026-04-15 00:39:58,970 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:39:58,985 [INFO] main: OK: 25.01.2026 | 77.24 EUR | Bibelhaus Erlebnismuseum -> Kollekten_2026_01.xlsx
+2026-04-15 00:39:59,154 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-25 09:33:44.841000+00:00)
+2026-04-15 00:39:59,248 [INFO] excel_writer: Neue Monatsdatei erstellt: C:\ai\Buchungsblatt_kollekten\output\eigene_gemeinde\Kollekten_2026_01.xlsx
+2026-04-15 00:39:59,334 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 17
+2026-04-15 00:39:59,349 [INFO] main: OK: 08.01.2026 | 71.80 EUR | Kinder u. Jugendarbeit eigene Gemeinde -> Kollekten_2026_01.xlsx
+2026-04-15 00:39:59,485 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-15 11:38:37.182000+00:00)
+2026-04-15 00:39:59,574 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 18
+2026-04-15 00:39:59,590 [INFO] main: OK: 11.01.2026 | 61.00 EUR | Diakonie Hessen -> Kollekten_2026_01.xlsx
+2026-04-15 00:39:59,837 [INFO] main: Verarbeite E-Mail: Gottesdienststatistik (empfangen: 2026-01-04 11:45:12.547000+00:00)
+2026-04-15 00:39:59,928 [INFO] excel_writer: Eingetragen in Kollekten_2026_01.xlsx Zeile 19
+2026-04-15 00:39:59,943 [INFO] main: OK: 04.01.2026 | 10.00 EUR | JuLeiCa -> Kollekten_2026_01.xlsx
+2026-04-15 00:40:17,855 [INFO] outlook_reader: Outlook-Suche abgeschlossen: 14 neue E-Mails, 0 bereits verarbeitet uebersprungen.
+2026-04-15 00:40:17,856 [INFO] main: === Fertig: 13 verarbeitet, 1 Fehler ===

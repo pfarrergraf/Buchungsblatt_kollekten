@@ -1,31 +1,25 @@
-"""Outlook-Anbindung via win32com: liest E-Mails von no-reply@ekhn.info."""
-import json
+"""Outlook-Anbindung via win32com: liest E-Mails aus den konfigurierten Absendern."""
+from __future__ import annotations
+
 import logging
-from pathlib import Path
 from typing import Generator, Optional
+
+from state_store import load_id_set, save_id_set
+from state_store import remove_ids
 
 log = logging.getLogger(__name__)
 
-# Restrict-Filter: Absender — Outlook filtert nativ, kein Iterieren aller Mails
-# Items.Restrict() nutzt JET-Syntax mit eckigen Klammern (kein @SQL= nötig)
-_RESTRICT_FILTER = "[SenderEmailAddress] = 'no-reply@ekhn.info'"
 
-
-def _load_processed(filepath: str) -> set:
-    p = Path(filepath)
-    if p.exists():
-        with open(p, encoding="utf-8") as f:
-            return set(json.load(f))
-    return set()
-
-
-def _save_processed(filepath: str, ids: set) -> None:
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(sorted(ids), f, indent=2)
+def _sender_filter(senders: list[str]) -> str:
+    if not senders:
+        senders = ["no-reply@ekhn.info"]
+    filters = [f"[SenderEmailAddress] = '{sender}'" for sender in senders]
+    if len(filters) == 1:
+        return filters[0]
+    return "(" + " OR ".join(filters) + ")"
 
 
 def _iter_all_folders(folder):
-    """Rekursiv alle Unterordner eines Outlook-Ordners durchlaufen."""
     yield folder
     try:
         for subfolder in folder.Folders:
@@ -35,23 +29,20 @@ def _iter_all_folders(folder):
 
 
 def get_new_emails(cfg: dict, year_filter: Optional[int] = None) -> Generator[dict, None, None]:
-    """
-    Gibt neue (noch nicht verarbeitete) E-Mails von no-reply@ekhn.info zurück.
-
-    Verwendet Items.Restrict() mit Absender+Betreff-Filter — Outlook hängt nicht.
-    year_filter: wenn gesetzt, werden nur E-Mails aus diesem Jahr geliefert.
-    """
+    """Gibt noch nicht verarbeitete E-Mails aus den konfigurierten Absendern zurück."""
     try:
         import win32com.client
-    except ImportError:
+    except ImportError as exc:
         raise RuntimeError(
-            "pywin32 nicht installiert oder Outlook nicht verfügbar. "
-            "Bitte 'uv pip install pywin32' und Outlook starten."
-        )
+            "pywin32 nicht installiert oder Outlook nicht verfuegbar. Bitte 'uv pip install pywin32' ausfuehren."
+        ) from exc
 
-    processed = _load_processed(cfg["processed_emails_file"])
+    mail_cfg = cfg.get("mail", {})
+    processed = load_id_set(cfg["state"]["processed_emails_file"])
     found = 0
     skipped = 0
+    subject_filter = str(mail_cfg.get("subject_filter", "Gottesdienststatistik")).casefold()
+    sender_filter = _sender_filter(list(mail_cfg.get("senders", [])))
 
     outlook = win32com.client.Dispatch("Outlook.Application")
     namespace = outlook.GetNamespace("MAPI")
@@ -61,12 +52,12 @@ def get_new_emails(cfg: dict, year_filter: Optional[int] = None) -> Generator[di
             store = namespace.Stores[store_idx]
             root = store.GetRootFolder()
         except Exception as exc:
-            log.debug("Store %d übersprungen: %s", store_idx, exc)
+            log.debug("Store %d uebersprungen: %s", store_idx, exc)
             continue
 
         for folder in _iter_all_folders(root):
             try:
-                restricted = folder.Items.Restrict(_RESTRICT_FILTER)
+                restricted = folder.Items.Restrict(sender_filter)
                 count = restricted.Count
             except Exception:
                 continue
@@ -84,22 +75,18 @@ def get_new_emails(cfg: dict, year_filter: Optional[int] = None) -> Generator[di
                     continue
 
                 try:
-                    entry_id = msg.EntryID
-
+                    entry_id = str(msg.EntryID)
                     if entry_id in processed:
                         skipped += 1
                         continue
 
-                    # Jahresfilter
                     if year_filter is not None:
                         received = getattr(msg, "ReceivedTime", None)
                         if received and received.year != year_filter:
                             continue
 
-                    # Betreff-Filter: nur "Gottesdienststatistik"-Mails
                     subject = getattr(msg, "Subject", "") or ""
-                    subject_filter = cfg.get("subject_filter", "Gottesdienststatistik")
-                    if subject_filter.lower() not in subject.lower():
+                    if subject_filter and subject_filter not in subject.casefold():
                         continue
 
                     body = ""
@@ -111,22 +98,59 @@ def get_new_emails(cfg: dict, year_filter: Optional[int] = None) -> Generator[di
                     found += 1
                     yield {
                         "entry_id": entry_id,
-                        "subject": getattr(msg, "Subject", ""),
+                        "subject": subject,
                         "body": body,
                         "received": getattr(msg, "ReceivedTime", None),
+                        "sender_email": getattr(msg, "SenderEmailAddress", ""),
                     }
-
                 except Exception as exc:
                     log.warning("Fehler bei E-Mail %d: %s", i, exc)
-                    continue
 
     log.info(
-        "Outlook-Suche abgeschlossen: %d neue E-Mails, %d bereits verarbeitet übersprungen.",
-        found, skipped,
+        "Outlook-Suche abgeschlossen: %d neue E-Mails, %d bereits verarbeitet uebersprungen.",
+        found,
+        skipped,
     )
 
 
+def get_emails_by_entry_ids(cfg: dict, entry_ids: set[str]) -> Generator[dict, None, None]:
+    """Lädt gezielt Outlook-Nachrichten über EntryIDs."""
+    if not entry_ids:
+        return
+    try:
+        import win32com.client
+    except ImportError as exc:
+        raise RuntimeError(
+            "pywin32 nicht installiert oder Outlook nicht verfuegbar. Bitte 'uv pip install pywin32' ausfuehren."
+        ) from exc
+    outlook = win32com.client.Dispatch("Outlook.Application")
+    namespace = outlook.GetNamespace("MAPI")
+    for entry_id in sorted(entry_ids):
+        try:
+            msg = namespace.GetItemFromID(entry_id)
+        except Exception as exc:
+            log.warning("Outlook-Eintrag %s nicht ladbar: %s", entry_id, exc)
+            continue
+        subject = getattr(msg, "Subject", "") or ""
+        body = ""
+        try:
+            body = msg.Body or ""
+        except Exception:
+            pass
+        yield {
+            "entry_id": str(entry_id),
+            "subject": subject,
+            "body": body,
+            "received": getattr(msg, "ReceivedTime", None),
+            "sender_email": getattr(msg, "SenderEmailAddress", ""),
+        }
+
+
 def mark_processed(cfg: dict, entry_id: str) -> None:
-    processed = _load_processed(cfg["processed_emails_file"])
+    processed = load_id_set(cfg["state"]["processed_emails_file"])
     processed.add(entry_id)
-    _save_processed(cfg["processed_emails_file"], processed)
+    save_id_set(cfg["state"]["processed_emails_file"], processed)
+
+
+def remove_processed_ids(cfg: dict, entry_ids: set[str]) -> None:
+    remove_ids(cfg["state"]["processed_emails_file"], entry_ids)

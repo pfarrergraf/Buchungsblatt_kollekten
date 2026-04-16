@@ -111,6 +111,18 @@ def _extract_betrag_und_zweck(line: str) -> Optional[tuple[float, str]]:
     return None
 
 
+def extract_partial_info(body: str, received_date: Optional[date] = None) -> dict:
+    """
+    Extrahiert so viel wie möglich aus einem nicht vollständig parseabaren Body.
+    Gibt dict mit 'datum_str', 'last_line' zurück (alles kann None/leer sein).
+    """
+    date_match = _DATE_PATTERN.search(body)
+    datum_str = date_match.group(1) if date_match else None
+    content_lines = _get_content_lines(body)
+    last_line = content_lines[-1] if content_lines else ""
+    return {"datum_str": datum_str, "last_line": last_line}
+
+
 def parse_email(body: str, received_date: Optional[date] = None) -> Optional[KollekteData]:
     """
     Parst den E-Mail-Body und gibt KollekteData zurück oder None bei Fehler.
