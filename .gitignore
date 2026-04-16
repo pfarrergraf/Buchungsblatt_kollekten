@@ -7,7 +7,7 @@ config.example.local.json
 output/
 Kollekten_*.xlsx
 kollekten_uebersicht.xlsx
-
+*.xlsx
 # Laufzeit- und Cache-Dateien
 *.log
 processed_emails.json
