@@ -34,6 +34,8 @@ from PySide6.QtWidgets import (
 from booking_store import get_booking_rows
 from collection_ops import delete_records
 from app.ai.chat_widget import ChatWidget
+from app.tabs.verwaltung import VerwaltungTab
+from app.tabs.gottesdienst import GottesdienstTab
 from app.documents import (
     DocumentSource,
     WorkFileEntry,
@@ -1679,6 +1681,7 @@ class MainWindow(QMainWindow):
         self._refresh_ui()
         QTimer.singleShot(3000, self._start_update_check)
         QTimer.singleShot(1000, self._maybe_start_api_server)
+        QTimer.singleShot(500, self._check_faellige_fristen)
 
     def _setup_window(self):
         self.setWindowTitle("Kollekten-Automation")
@@ -1714,12 +1717,16 @@ class MainWindow(QMainWindow):
         self.tab_uebersicht = UebersichtTab()
         self.tab_verlauf = VerlaufTab()
         self.tab_dokumente = DocumenteTab()
+        self.tab_verwaltung = VerwaltungTab()
+        self.tab_gottesdienst = GottesdienstTab()
         self.tab_hilfe = HilfeTab()
         self.tab_einstellungen = EinstellungenTab()
 
         self.tabs.addTab(self.tab_uebersicht, "Übersicht")
         self.tabs.addTab(self.tab_verlauf, "Verlauf")
         self.tabs.addTab(self.tab_dokumente, "Dokumente")
+        self.tabs.addTab(self.tab_gottesdienst, "Gottesdienst")
+        self.tabs.addTab(self.tab_verwaltung, "Verwaltung")
         self.tabs.addTab(self.tab_hilfe, "Hilfe / KI")
         self.tabs.addTab(self.tab_einstellungen, "Einstellungen")
 
@@ -1738,6 +1745,18 @@ class MainWindow(QMainWindow):
 
         self.setStatusBar(QStatusBar())
         self.statusBar().showMessage("Bereit")
+
+    def _check_faellige_fristen(self) -> None:
+        """Zeigt Statusbar-Hinweis wenn Fristen heute/morgen fällig sind."""
+        try:
+            anzahl = self.tab_verwaltung.get_faellige_anzahl()
+            if anzahl > 0:
+                self.statusBar().showMessage(
+                    f"Hinweis: {anzahl} Wiedervorlage(n) heute oder morgen fällig — Tab 'Verwaltung'",
+                    8000,
+                )
+        except Exception:
+            pass
 
     def _load_config(self):
         try:

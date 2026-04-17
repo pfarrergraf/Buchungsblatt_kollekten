@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Regionalverwaltung Nassauer Land",
+    "kurzname": "RV Nassauer Land",
+    "zustaendig_fuer": [
+      "Oberlahnstein", "Lahnstein", "Braubach", "Boppard", "Nastätten",
+      "Bad Schwalbach", "Aarbergen", "Taunusstein", "Waldems", "Heidenrod",
+      "Katzenelnbogen", "Kamp-Bornhofen", "Filsen", "Osterspai", "Kestert"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung", "Haushaltsplan"],
+    "telefon": "06124 7009-0",
+    "email": "regionalverwaltung.nassauer-land@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/nassauer-land.html",
+    "adresse": "Kirchstr. 5, 65307 Bad Schwalbach"
+  },
+  {
+    "name": "Regionalverwaltung Rheingau-Taunus",
+    "kurzname": "RV Rheingau-Taunus",
+    "zustaendig_fuer": [
+      "Wiesbaden", "Rüdesheim", "Eltville", "Geisenheim", "Lorch",
+      "Oestrich-Winkel", "Kiedrich", "Hattenheim", "Erbach", "Rauenthal"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung"],
+    "telefon": "0611 9366-0",
+    "email": "regionalverwaltung.rheingau-taunus@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/rheingau-taunus.html",
+    "adresse": "Abraham-Lincoln-Str. 2, 65189 Wiesbaden"
+  },
+  {
+    "name": "Regionalverwaltung Mitte",
+    "kurzname": "RV Mitte",
+    "zustaendig_fuer": [
+      "Frankfurt am Main", "Offenbach", "Dreieich", "Langen", "Neu-Isenburg",
+      "Mühlheim", "Seligenstadt", "Rodgau", "Rödermark", "Dietzenbach"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung"],
+    "telefon": "069 71379-0",
+    "email": "regionalverwaltung.mitte@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/mitte.html",
+    "adresse": "Eschenheimer Anlage 21, 60316 Frankfurt am Main"
+  },
+  {
+    "name": "Regionalverwaltung Nord",
+    "kurzname": "RV Nord",
+    "zustaendig_fuer": [
+      "Hanau", "Gelnhausen", "Büdingen", "Friedberg", "Bad Vilbel",
+      "Nidda", "Altenstadt", "Gedern", "Lauterbach", "Schlüchtern"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung"],
+    "telefon": "06031 1638-0",
+    "email": "regionalverwaltung.nord@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/nord.html",
+    "adresse": "Frankfurter Str. 9, 61169 Friedberg"
+  },
+  {
+    "name": "Regionalverwaltung Starkenburg",
+    "kurzname": "RV Starkenburg",
+    "zustaendig_fuer": [
+      "Darmstadt", "Bensheim", "Heppenheim", "Viernheim", "Lampertheim",
+      "Eberstadt", "Griesheim", "Pfungstadt", "Gernsheim", "Groß-Gerau"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung"],
+    "telefon": "06151 3908-0",
+    "email": "regionalverwaltung.starkenburg@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/starkenburg.html",
+    "adresse": "Landgraf-Georg-Str. 100, 64287 Darmstadt"
+  },
+  {
+    "name": "Regionalverwaltung Süd",
+    "kurzname": "RV Süd",
+    "zustaendig_fuer": [
+      "Mannheim", "Ludwigshafen", "Heidelberg", "Weinheim", "Schwetzingen",
+      "Speyer", "Frankenthal", "Neustadt a.d.W.", "Worms", "Alzey"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung"],
+    "telefon": "0621 122-0",
+    "email": "regionalverwaltung.sued@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/sued.html",
+    "adresse": "D7, 9-10, 68159 Mannheim"
+  },
+  {
+    "name": "Regionalverwaltung West",
+    "kurzname": "RV West",
+    "zustaendig_fuer": [
+      "Mainz", "Bingen", "Ingelheim", "Nieder-Olm", "Oppenheim",
+      "Bad Kreuznach", "Idar-Oberstein", "Kirn", "Meisenheim"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung"],
+    "telefon": "06131 28755-0",
+    "email": "regionalverwaltung.west@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/west.html",
+    "adresse": "Fischtorplatz 23, 55116 Mainz"
+  },
+  {
+    "name": "Regionalverwaltung Osthessen",
+    "kurzname": "RV Osthessen",
+    "zustaendig_fuer": [
+      "Fulda", "Hünfeld", "Lauterbach", "Schotten", "Herbstein",
+      "Alsfeld", "Kirchhain", "Marburg", "Homberg", "Schwalmstadt"
+    ],
+    "themen": ["Personal", "Finanzen", "Bau", "Kiris", "MACH", "Gemeindeleitung"],
+    "telefon": "06641 9754-0",
+    "email": "regionalverwaltung.osthessen@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/regionalverwaltungen/osthessen.html",
+    "adresse": "Heinrichstr. 11, 36037 Fulda"
+  },
+  {
+    "name": "Kirchenverwaltung EKHN – Stabsbereich Recht",
+    "kurzname": "Stabsbereich Recht",
+    "zustaendig_fuer": ["EKHN-weit", "alle Kirchengemeinden"],
+    "themen": ["Recht", "Kirchenrecht", "Rechtsfragen", "Rechtsberatung", "KGO", "Kollektenverwaltungsordnung"],
+    "telefon": "06151 405-0",
+    "email": "stabsbereich-recht@ekhn.de",
+    "url": "https://www.ekhn.de/ueber-uns/aufbau/kirchenverwaltung.html",
+    "adresse": "Paulusplatz 1, 64285 Darmstadt",
+    "hinweis": "Für verbindliche Rechtsauskünfte zu kirchenrechtlichen Fragen (KGO, Kollektenordnung etc.)"
+  }
+]

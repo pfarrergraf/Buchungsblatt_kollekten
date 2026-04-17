@@ -1,315 +1,253 @@
 # Kollekten-App — Implementierungs-Checkliste
 
-> **Maschinenlesbare Checkliste** für Claude Code, GitHub Copilot, Codex und andere KI-Tools.
-> Verweist auf den vollständigen Plan: `C:\Users\Mein Computer\.claude\plans\rosy-frolicking-dream.md`
-> Aktueller Stand: 2026-04-15
+> **Maschinenlesbare Checkliste** für Claude Code, Codex und andere KI-Agenten.
+> Roadmap-Vollversion: `C:\Users\Mein Computer\.claude\plans\velvety-wiggling-rainbow.md`
+> Aktueller Stand: **2026-04-17** — App-Version 1.1.0
 
 ---
 
 ## Kontext für KI-Agenten
 
-**Projekt:** Kollekten-Automation — Windows-Desktop-App (PySide6) für Ev. Kirchengemeinden (EKHN)
-**Stack:** Python 3.11+, PySide6 6.11, pystray, openpyxl, win32com, requests, pdfplumber
+**Projekt:** EKHN Gemeindesekretariat-Software — Windows-Desktop-App (PySide6) für Ev. Kirchengemeinden
+**Stack:** Python 3.12, PySide6 6.11, pdfplumber, openpyxl, win32com, requests, fastapi, uvicorn
 **Venv:** `.venv/` im Projektroot — immer `uv pip install`, nie `pip install`
 **Startpunkt App:** `app_entry.py` → `app/main_window.py`
+**Startpunkt API:** `server_entry.py` oder `.venv/Scripts/python -m uvicorn app.api.server:app --port 8765`
 **Startpunkt CLI:** `main.py run --year 2026`
-**Konfiguration:** `config.json` (V2-Schema, wird von `config.py::get_config()` geladen)
+**Konfiguration:** `config.json` (V2-Schema, geladen via `config.py::get_config()`)
 **Theme:** `app/theme/office2010.qss` — Office-2010-Blau (#2B579A), Segoe UI
-**Tests:** `python app_entry.py` startet die GUI; `python main.py run --year 2026` testet CLI
 
 ---
 
-## Phase 1: PySide6-Grundgerüst ✅ ABGESCHLOSSEN
+## Ursprüngliche Phasen 1–9: Basis-App ✅ ABGESCHLOSSEN
 
-- [x] PySide6 6.11, pystray, Pillow, requests, pdfplumber installiert
-- [x] `app/` Verzeichnisstruktur angelegt (`widgets/`, `ai/`, `theme/`)
+### Phase 1: PySide6-Grundgerüst ✅
+- [x] `app/main_window.py` — Hauptfenster mit Header, Tabs, Sidebar, StatusCards
 - [x] `app/theme/office2010.qss` — vollständiges QSS-Theme
-- [x] `app/main_window.py` — Hauptfenster mit Header, Tabs, Sidebar, StatusCards, Tabelle
-      Enthält: `UebersichtTab`, `VerlaufTab` (Platzhalter), `EinstellungenTab` (Platzhalter)
-- [x] `app_entry.py` — Einstiegspunkt
+- [x] `app_entry.py` — Einstiegspunkt, First-Run-Erkennung
 - [x] `assets/app.png`, `assets/app.ico` — Kirchenkreuz-Icon
-- [x] `main.run()` gibt `(processed_count, error_count)` zurück
 
-**Verifikation:** `python app_entry.py` öffnet Fenster, blaues Header-Band, Office-Stil ✓
+### Phase 2: Setup-Wizard + Tray ✅
+- [x] `app/setup_wizard.py` — 4-seitiger Wizard (Gemeinde, Vorlagen, Zeitplan, Test)
+- [x] `app/autostart.py` — HKCU-Registry, kein Admin nötig
+- [x] `app/tray.py` — pystray Daemon-Thread mit Menü + Benachrichtigungen
 
----
+### Phase 3: Verlauf + Korrektur ✅
+- [x] `app/widgets/collection_table.py` — CollectionTable mit 7 Spalten, Farbkodierung
+- [x] `KorrekturDialog` — speichert in `data/reference/manual_overrides.json`
+- [x] `VerlaufTab` — Filter Monat/Jahr/Warnungen, Statistikzeile, Bericht-Button
 
-## Phase 2: Setup-Wizard + Tray ✅ ABGESCHLOSSEN
+### Phase 4: Monatsbericht ✅
+- [x] `app/reporter.py` — generate_monthly_report, Drucken/Vorschau/PDF/E-Mail
 
-> Plan-Referenz: Abschnitt "Phase 2: Setup-Wizard + Tray (opt-in)"
+### Phase 5: Dokument-Suche ✅
+- [x] `app/documents.py` — DocumentSource, PDF/URL/Ordner-Indexierung, Keyword-Suche
+- [x] `DocumenteTab` — Quellenverwaltung, Suche mit HTML-Ergebnisanzeige
 
-### 2a. Setup-Wizard — `app/setup_wizard.py` ✅
+### Phase 6: KI-Integration Basis ✅
+- [x] `app/ai/provider.py` — AIProvider ABC + DisabledProvider, OpenRouter, OpenAI, Anthropic, Ollama, LM Studio
+- [x] `app/ai/chat_widget.py` — ChatWidget mit Bubble-UI, ChatWorker(QThread)
+- [x] `app/ai/tools.py` — 13 Tools, TOOL_LEVELS, ACTION_TOOLS, to_anthropic_tools/to_openai_tools
+- [x] `HilfeTab` — ChatWidget eingebettet, KI-Hinweis wenn deaktiviert
 
-- [x] `SetupWizard(QWizard)` mit 4 Pages
-- [x] **Page 1 — GemeindePage**: gemeinde_name, rechtsträger_nr (4-6 Ziffern Validator), bank_name, bank_iban, bank_bic
-- [x] **Page 2 — VorlagenPage**: 2 Dateidialoge für .xlsx, isComplete() erst true wenn beide gewählt
-- [x] **Page 3 — ZeitplanPage**: Radio Manuell/Täglich/Wöchentlich + OPT-IN Checkboxen (Tray, Autostart — standardmäßig DEAKTIVIERT)
-- [x] **Page 4 — TestPage**: run(dry_run=True) in QThread, Ergebnisanzeige, Spendenhinweis
-- [x] `wizard.accept()` → `config.save_config()`, ruft `autostart.set_autostart()` auf
+### Phase 7: Update-Mechanismus ✅
+- [x] `app/updater.py` — GitHub Releases Check, UpdateBanner
+- [ ] GitHub-Repo anlegen + GITHUB_REPO setzen (manuell)
 
-### 2b. Autostart-Registry — `app/autostart.py` ✅
+### Phase 8: EinstellungenTab ✅
+- [x] Sub-Tabs: Allgemein | Ausführung | PWA/API | KI | Über
+- [x] KI-Einstellungen: Provider, API-Key, Modell, Verbindungstest
 
-- [x] `set_autostart(enabled, exe_path)` → HKCU Registry, kein Admin nötig
-- [x] `is_autostart_enabled() -> bool`
+### Phase 9: Packaging ✅
+- [x] `kollekten_app.spec` — PyInstaller-Spec
+- [x] `installer/setup.nsi` — NSIS-Installer
+- [ ] Build testen (manuell: `pyinstaller kollekten_app.spec`)
 
-### 2c. Tray — `app/tray.py` ✅
-
-- [x] `TrayIcon(on_open, on_run, on_quit)` — pystray in Daemon-Thread
-- [x] Menü: "Dashboard öffnen" | "Jetzt ausführen" | "─" | "Beenden"
-- [x] `show_notification(title, msg)` via `icon.notify()`
-- [x] Qt-sicher: `QTimer.singleShot(0, fn)` für UI-Callbacks
-
-### 2d. First-Run-Erkennung — `app_entry.py` ✅
-
-- [x] `_needs_setup()` prüft rechtsträger_nr + beide Template-Pfade
-- [x] Wizard wird vor MainWindow geöffnet wenn nötig
-- [x] `app.use_tray`, `app.autostart`, `app.font_size`, `app.theme` in DEFAULT_CONFIG
-
----
-
-## Phase 3: Verlauf + Korrektur 🔄 TEILWEISE ABGESCHLOSSEN
-
-> Plan-Referenz: Abschnitt "Phase 3: Verlauf + manuelle Korrektur"
-
-### 3a. `app/widgets/collection_table.py` ✅
-
-- [x] `CollectionTable(QTableWidget)` — 7 Spalten: Datum|Betrag|Verwendungszweck|Typ|AObj|⚠|Datei
-- [x] Typ-Zellen farbig: grün (eigene), blau (Weiterleitung)
-- [x] `needs_review`-Zeilen gelb hinterlegt
-- [x] Daten aus `output/kollekten_uebersicht.xlsx` via openpyxl
-- [x] Sortierung nach Datum absteigend
-- [x] Rechtsklick: "Klassifizierung korrigieren…" | "In Explorer öffnen"
-- [x] `load_data(cfg, month_filter, year_filter, only_warnings)` mit Filter-Support
-- [x] `correction_saved = Signal(str, str, str)` — pattern, scope, aobj
-
-### 3b. `KorrekturDialog` — in `collection_table.py` ✅
-
-- [x] Scope-ComboBox: eigene_gemeinde | zur_weiterleitung
-- [x] AObj-ComboBox (lädt aus abrechnungsobjekte.json, Fallback hardcoded)
-- [x] Grundtext-Feld
-- [x] Speichert in `data/reference/manual_overrides.json`
-
-### 3c. `VerlaufTab` — Vollimplementierung in `main_window.py` ✅
-
-- [x] Ersetze Platzhalter-QLabel durch echte CollectionTable-Integration
-- [x] Filter-Leiste oben: Monat (QComboBox, 1-12 + "Alle"), Jahr (QSpinBox), "Nur Warnungen" (QCheckBox)
-- [x] Statistik-Zeile unten: "Eigene: X,XX € | Weiterleitung: X,XX € | Gesamt: X,XX €"
-- [x] "Bericht erstellen"-Button rechts (→ Phase 4, vorerst deaktiviert/Platzhalter)
-- [x] Bei `correction_saved`-Signal: Tabelle neu laden
+### FastAPI / PWA ✅
+- [x] `app/api/server.py` — FastAPI + uvicorn in Daemon-Thread
+- [x] `app/api/routes/` — status, kollekten (GET/summary), actions (POST run), live (SSE)
+- [x] `app/api/static/` — PWA (index.html, app.js, manifest.json, sw.js)
 
 ---
 
-## Phase 4: Monatsbericht ✅ ABGESCHLOSSEN
+## Roadmap Phase 1: KI-Tools & Sicherheitsstufen ✅ ABGESCHLOSSEN (2026-04-17)
 
-> Plan-Referenz: Abschnitt "Monatsbericht"
+### 1a. Bestätigungsstufen ✅
+- [x] `TOOL_LEVELS` in `app/ai/tools.py`: read_only | draft_only | user_confirmed | user_confirmed_send | admin_only
+- [x] `ACTION_TOOLS` aus TOOL_LEVELS abgeleitet (generisch)
+- [x] `chat_widget.py._execute_call()` prüft Level, passender Dialog je Stufe
+- [x] `user_confirmed_send` → QMessageBox.Warning mit E-Mail-Hinweis
+- [x] System-Prompt mit Disclaimer + alle 13 Tools dokumentiert
 
-### `app/reporter.py`
+### 1b+c. Wissens-Tools ✅
+- [x] `suche_kirchenrecht(query)` — Keyword-Suche in `data/knowledge/kirchenrecht/*.pdf`
+- [x] `suche_handbuch(prozess)` — Handbuch 2019, Cache in `data/knowledge/handbuch_2019.txt`
+- [x] `_load_or_extract_text()` + `_keyword_snippets()` — PDF-Extraktion mit Caching
 
-- [x] `generate_monthly_report(month, year, cfg) -> ReportData` — liest aus overview.xlsx
-- [x] `print_report(report, parent)` via QPrinter + QPainter
-- [x] `preview_report(report, parent)` via QPrintPreviewDialog
-- [x] `export_pdf(report, path)` — QPrinter PDF-Format
-- [x] `email_report(report, cfg)` — exportiert PDF, versendet via email_sender
-- [x] Dropdown-Button "Bericht erstellen ▼" in VerlaufTab: Drucken | Vorschau | PDF | E-Mail
+### 1d. Formular-Index ✅
+- [x] `data/formulare/index.json` — 10 EKHN-Formulare (Spendenquittung, AAO, Taufregister, ...)
+- [x] `get_formular_info(typ)` — Tool sucht nach ID, Name, Schlagworten
 
----
+### 1e. Regionalverwaltungs-Index ✅
+- [x] `data/kontakte/regionalverwaltungen.json` — 9 RV inkl. Stabsbereich Recht
+- [x] `get_regionalverwaltung(thema)` — findet zuständige RV nach Thema + Gemeinde-Ort
 
-## Phase 5: Dokument-Suche ✅ ABGESCHLOSSEN
+### Weitere neue Tools ✅
+- [x] `get_recent_errors(anzahl)` — liest kollekten.log
+- [x] `get_kollektenplan(datum)` — aus `data/state/kollektenplan.json`
+- [x] `liste_faellige_fristen(tage)` — aus `data/state/wiedervorlagen.json`
+- [x] `save_note(entity_type, entity_id, note)` — in `data/state/notizen.json`
 
-> Plan-Referenz: Abschnitt "Dokument-Suche (EKHN-Quellen)"
-
-### `app/documents.py`
-
-- [x] `DocumentSource` dataclass mit `to_dict` / `from_dict`
-- [x] `load_sources(cfg)`, `save_sources(cfg, sources)`
-- [x] `refresh_source(source)` — PDF via pdfplumber, URL via requests, Ordner rekursiv
-      Caching in `data/documents/<md5>.txt`
-- [x] `search_sources(query, sources)` — Substring-Matching, Kontext ±1 Zeile
-
-### `DocumenteTab` — in `main_window.py` ✅
-
-- [x] Tab "Dokumente" zwischen Verlauf und Hilfe
-- [x] QListWidget mit Icons (📄/🌐/📁) + Datum
-- [x] Buttons: "+ Hinzufügen" | "Aktualisieren" | "Löschen"
-- [x] Hinzufügen-Dialog: Radio Datei/URL/Ordner + Dateidialog
-- [x] Suchfeld + HTML-Ergebnisanzeige
-
----
-
-## Phase 6: AI-Integration ✅ ABGESCHLOSSEN
-
-> Plan-Referenz: Abschnitt "AI-Integration (optional, konfigurierbar)"
-
-### `app/ai/provider.py`
-
-- [x] `AIProvider(ABC)` mit `chat(messages: list[dict]) -> str`
-      und `is_available() -> bool`, `name() -> str`
-- [x] `DisabledProvider` — Standardfall, wirft `AIDisabledError`
-- [x] `OpenRouterProvider(api_key, model)` — POST `https://openrouter.ai/api/v1/chat/completions`
-      Header: `Authorization: Bearer <key>`, `HTTP-Referer: kollekten-automation`
-      Kostenlose Modelle: `meta-llama/llama-3.1-8b-instruct:free`
-- [x] `OpenAIProvider(api_key, model="gpt-4o-mini")` — openai SDK oder direktes requests
-- [x] `AnthropicProvider(api_key, model="claude-haiku-4-5-20251001")` — anthropic SDK
-- [x] `get_provider(cfg: dict) -> AIProvider` — Factory aus `cfg["ai"]["provider"]`
-
-### `app/ai/chat_widget.py`
-
-- [x] `ChatWidget(QWidget)` — Nachrichtenverlauf (HTML-Bubbles), Eingabe + Senden
-- [x] `ChatWorker(QObject)` in QThread, nie blockierend
-- [x] System-Prompt mit Gemeinde-Kontext + AObj-Codes
-- [ ] Spezial-Commands: `/search <query>` → sucht in Dokument-Quellen
-- [ ] Worker-Thread für API-Calls (nie blockierend)
-
-### `HilfeTab` — in `main_window.py` ✅
-
-- [x] Tab "Hilfe / KI" — ChatWidget eingebettet
-- [x] Wenn KI deaktiviert: Hinweistext mit Verweis auf Einstellungen
+### Daten angelegt ✅
+- [x] `data/knowledge/kirchenrecht/HINWEIS.txt` — Anleitung PDFs ablegen
+- [x] `data/state/wiedervorlagen.json` — 7 vorausgefüllte Regelfristen (Handbuch-Quellen)
+- [x] `data/state/kollektenplan.json` — leer, bereit zum Befüllen
+- [x] `data/state/notizen.json` — leer, bereit
+- [x] `data/formulare/templates/` — Verzeichnis für DOCX-Templates
 
 ---
 
-## Phase 7: Update-Mechanismus ⬜ OFFEN
+## Roadmap Phase 2: Wiedervorlage-Tab ✅ ABGESCHLOSSEN (2026-04-17)
 
-> Plan-Referenz: Abschnitt "Update-Mechanismus (GitHub Releases)"
-
-### `app/updater.py`
-
-- [x] `APP_VERSION = "1.0.0"` — zentrale Versionskonstante
-- [x] `GITHUB_REPO = "PLACEHOLDER/kollekten-automation"` — Platzhalter, vor Release setzen
-- [x] `check_for_update() -> UpdateInfo | None`
-      GET `https://api.github.com/repos/{REPO}/releases/latest`
-      Timeout 5s, Exception schlucken (nie blockieren)
-      Vergleich: `semver`-Vergleich oder einfacher String-Vergleich "v1.0.1" > "v1.0.0"
-- [x] `UpdateBanner(QWidget)` — kleines Banner oben im Hauptfenster
-      "Version 1.1.0 verfügbar — [Herunterladen] [Später]"
-      "Herunterladen" → `webbrowser.open(release_url)`
-- [x] In `MainWindow.__init__`: Background-Check via `QTimer.singleShot(3000, ...)`
-
-**Verifiziert:**
-
-- [x] `python -c "from app.updater import check_for_update; print('updater OK')"`
-- [x] `python -c "from app.ai.provider import get_provider; print('provider OK')"`
+- [x] `app/tabs/verwaltung.py` — `VerwaltungTab(QWidget)`
+- [x] Tabelle mit Farbkodierung: rot (überfällig), gelb (heute/morgen), lila (diese Woche), grau (erledigt)
+- [x] CRUD: Neu / Bearbeiten (Doppelklick) / Erledigt / Löschen
+- [x] Bearbeitungs-Dialog: Titel, QDateEdit, Kategorie, Priorität, AZ, Notiz, Erledigt-Checkbox
+- [x] Filter: Kategorie-ComboBox, Status-ComboBox (Alle/Offen/Erledigt)
+- [x] `get_faellige_anzahl() -> int` — für Startup-Hinweis
+- [x] In `main_window.py` integriert als Tab "Verwaltung"
+- [x] `_check_faellige_fristen()` in `MainWindow.__init__` → Statusbar-Hinweis beim Start
 
 ---
 
-## Phase 8: EinstellungenTab ✅ ABGESCHLOSSEN
+## Roadmap Phase 3: Gottesdienst-Tab ✅ ABGESCHLOSSEN (2026-04-17)
 
-> Plan-Referenz: Abschnitt "Setup-Wizard, Schritt 3" + "AI-Integration"
-
-### `EinstellungenTab` — Vollimplementierung in `main_window.py`
-
-- [x] Sub-Tabs: "Allgemein" | "Ausführung" | "KI" | "Über"
-- [x] Allgemein: Gemeindedaten, Vorlagenpfade (Dateidialog), Empfänger-E-Mails
-- [x] Ausführung: Zeitplan-Radio + Tray/Autostart-Checkboxen (opt-in) + Schriftgröße
-- [x] KI: Provider-Auswahl, API-Key (maskiert), Modell, [Verbindung testen]
-- [x] Über: App-Name, Version, Spendenhinweis
-- [x] Speichern: schreibt config.json, ruft autostart.set_autostart(), passt Schriftgröße an
-- [x] `settings_saved` Signal → MainWindow lädt Config neu
-
----
-
-## Phase 9: Packaging ✅ ABGESCHLOSSEN
-
-> Plan-Referenz: Abschnitt "Phase 4: Packaging"
-
-### PyInstaller
-
-- [x] `kollekten_app.spec` — --windowed, --onedir, icon, datas, hiddenimports
-- [ ] Build testen: `pyinstaller kollekten_app.spec`  ← manuell ausführen
-- [ ] Testen auf sauberem Windows (ohne Python)
-
-### NSIS Installer ✅
-
-- [x] `installer/setup.nsi` — MUI2, Lizenz, Ziel PROGRAMFILES64, Startmenü, Desktop
-- [x] `installer/license.txt` — Freeware-Lizenz
-- [ ] `Kollekten-Setup-1.0.0.exe` bauen ← manuell: `makensis installer/setup.nsi`
+- [x] `app/tabs/gottesdienst.py` — `GottesdienstTab(QWidget)` mit Sub-Tabs
+- [x] Sub-Tab "Gottesdienstplan": Monats-Navigation, Tabelle (Datum|Zeit|Ort|Pfarrer|Organist|Kollekte|Typ)
+- [x] Sub-Tab "Import": Jahresplanung aus Excel/CSV importieren
+  - [x] Automatische Spalten-Erkennung (Header-Zeile)
+  - [x] Felder: Datum, Uhrzeit, Pfarrer/in, Organist, Kollekte Zweck, Ort
+  - [x] Vorschau (5 Zeilen) vor Import
+  - [x] Optional: bestehende Einträge überschreiben
+  - [x] Kollektenplan parallel befüllen aus Kollekte-Spalte
+- [x] Sub-Tab "Abkündigung": lokaler Generator (kein KI-Call nötig), Clipboard-Export
+- [x] In `main_window.py` integriert als Tab "Gottesdienst"
+- [x] Datenmodell: `data/state/gottesdienste.json` mit Feldern inkl. `organist`
 
 ---
 
-## Konfigurationsfelder (noch hinzuzufügen)
+## Roadmap Phase 4: Offline-KI (Ollama + ChromaDB) ⬜ OFFEN
 
-Folgende Felder fehlen noch in `config.py::DEFAULT_CONFIG`:
-
-```python
-# In "app"-Sektion (neu):
-"app": {
-    "use_tray": False,          # Phase 2c
-    "autostart": False,         # Phase 2b
-    "font_size": 9,             # Phase 8
-    "theme": "office2010",      # Zukunft
-}
-
-# In "ai"-Sektion (neu):
-"ai": {
-    "provider": "disabled",     # "disabled"|"openrouter"|"openai"|"anthropic"|"local"
-    "api_key": "",
-    "model": "meta-llama/llama-3.1-8b-instruct:free",
-    "openrouter_base_url": "https://openrouter.ai/api/v1",
-}
-
-# In "document_sources" (neu):
-"document_sources": []          # Liste von DocumentSource-Dicts
-```
+- [ ] `app/ai/vector_store.py` — ChromaDB-Wrapper mit Ollama-Embeddings
+- [ ] `app/ai/rag.py` — Hybrid-RAG (BM25 Keyword + semantisch)
+- [ ] Ollama-Setup-Assistent in Einstellungen → KI
+- [ ] KI-Wissensbasis-Tab in DocumenteTab (Indexieren/Status)
+- [ ] `chromadb` in requirements.txt
 
 ---
 
-## Dateistruktur (Ist-Zustand 2026-04-15, Stand: alle Phasen abgeschlossen)
+## Roadmap Phase 5: EKHN-Wissen strukturiert ⬜ OFFEN
+
+- [ ] Kirchenrecht-PDFs von kirchenrecht-ekhn.de einlesen + §-Chunk-Zerlegung
+- [ ] Kollektenplan-PDF automatisch parsen (Regex)
+- [ ] Konflikterkennung bei Rechtsquellen
+- [ ] Formular-Assistent mit python-docx Templates
+
+---
+
+## Roadmap Phase 6: MCP-Server ⬜ OFFEN
+
+- [ ] `app/mcp_server.py` — FastMCP stdio-Server
+- [ ] Claude Desktop Config-Snippet in Einstellungen
+- [ ] `fastmcp` in requirements.txt
+
+---
+
+## Roadmap Phase 7: Personal + Verwaltung ⬜ OFFEN
+
+- [ ] `data/state/personal.json` — Mitarbeitende
+- [ ] Sub-Tab "Personal" in VerwaltungTab
+- [ ] Urlaubsplanung + Fehlzeiten
+- [ ] KV-Sitzungsassistent (Tagesordnung, Protokoll → Beschlüsse)
+
+---
+
+## Roadmap Phase 8–9: Amtshandlungen + Browser-Automation ⬜ OFFEN
+
+- [ ] Amtshandlungs-Checklisten (Taufe, Trauung, Bestattung, Konfirmation)
+- [ ] Gemeindebrief-Assistent
+- [ ] Playwright-MCP (nur nach expliziter Nutzerfreigabe, Phase 9)
+
+---
+
+## Ausstehende manuelle Schritte
+
+1. Kirchenrecht-PDFs herunterladen → `data/knowledge/kirchenrecht/` (siehe HINWEIS.txt)
+2. EKHN-Kollektenplan 2026/2027 PDF importieren → `data/state/kollektenplan.json`
+3. Jahresplanung-Excel importieren (Gottesdienst-Tab → Import)
+4. GitHub-Repo anlegen, `GITHUB_REPO` in `app/updater.py` setzen
+5. `pyinstaller kollekten_app.spec` → Build testen
+6. `makensis installer/setup.nsi` → Installer bauen
+
+---
+
+## Dateistruktur (Ist-Zustand 2026-04-17)
 
 ```
 app/
 ├── __init__.py
-├── main_window.py          ✅ Vollständig (alle Tabs)
-├── setup_wizard.py         ✅ Phase 2a
-├── autostart.py            ✅ Phase 2b
-├── tray.py                 ✅ Phase 2c
-├── reporter.py             ✅ Phase 4
-├── documents.py            ✅ Phase 5
-├── updater.py              ✅ Phase 7
+├── main_window.py          ✅ Tabs: Übersicht|Verlauf|Dokumente|Gottesdienst|Verwaltung|Hilfe/KI|Einstellungen
+├── setup_wizard.py         ✅
+├── autostart.py            ✅
+├── tray.py                 ✅
+├── reporter.py             ✅
+├── documents.py            ✅
+├── updater.py              ✅
 ├── ai/
+│   ├── provider.py         ✅ 6 Provider + Tool-Support
+│   ├── chat_widget.py      ✅ Tool-Loop, 5 Bestätigungsstufen
+│   └── tools.py            ✅ 13 Tools, TOOL_LEVELS
+├── api/
+│   ├── server.py           ✅ FastAPI + uvicorn
+│   ├── routes/             ✅ status, kollekten, actions, live
+│   └── static/             ✅ PWA (index.html, app.js, manifest.json)
+├── tabs/
 │   ├── __init__.py         ✅
-│   ├── provider.py         ✅ Phase 6a
-│   └── chat_widget.py      ✅ Phase 6b
+│   ├── verwaltung.py       ✅ Wiedervorlage-Tab
+│   └── gottesdienst.py     ✅ Gottesdienst-Tab + Jahresplanung-Import
 ├── widgets/
-│   ├── __init__.py         ✅
-│   └── collection_table.py ✅ Phase 3a+3b
+│   └── collection_table.py ✅
 └── theme/
-    └── office2010.qss      ✅ Phase 1
+    └── office2010.qss      ✅
 
-app_entry.py                ✅
-assets/app.png + app.ico    ✅
-kollekten_app.spec          ✅ Phase 9
-installer/setup.nsi         ✅ Phase 9
-installer/license.txt       ✅
+data/
+├── formulare/
+│   ├── index.json          ✅ 10 EKHN-Formulare
+│   └── templates/          ✅ (leer, bereit für DOCX-Templates)
+├── kontakte/
+│   └── regionalverwaltungen.json  ✅ 9 RV + Stabsbereich Recht
+├── knowledge/
+│   ├── kirchenrecht/       ✅ (leer — PDFs manuell ablegen)
+│   └── _cache/             ✅ (automatisch befüllt)
+├── reference/
+│   ├── kollektenregeln.json        ✅
+│   ├── abrechnungsobjekte.json     ✅
+│   └── manual_overrides.json       ✅
+└── state/
+    ├── bookings.json               ✅
+    ├── wiedervorlagen.json         ✅ 7 Regelfristen vorausgefüllt
+    ├── gottesdienste.json          ✅
+    ├── kollektenplan.json          ✅
+    └── notizen.json                ✅
 ```
-
-## Verbleibende manuelle Schritte
-
-1. `pyinstaller kollekten_app.spec` — baut `dist/Kollekten-Automation/`
-2. `makensis installer/setup.nsi` — baut `Kollekten-Setup-1.0.0.exe`
-3. Test auf sauberem Windows (ohne Python-Installation)
-4. GitHub-Repo anlegen, `GITHUB_REPO` in `app/updater.py` setzen
-5. Version `APP_VERSION` in `app/updater.py` bei Releases erhöhen
 
 ---
 
-## Für andere KI-Agenten (Codex/Copilot)
+## Codekonventionen (für KI-Agenten)
 
-**Codekonventionen:**
-- Alle Dateien beginnen mit `from __future__ import annotations`
-- PySide6 imports: immer aus `PySide6.QtWidgets`, `PySide6.QtCore`, `PySide6.QtGui`
-- Keine f-Strings mit komplexen Ausdrücken (für Python 3.11 Kompatibilität)
-- `objectName` für QSS-Styling: z.B. `widget.setObjectName("primaryButton")`
-- Business-Logik (parser, classifier, excel_writer) NIEMALS in app/ importieren direkt —
-  immer über `sys.path.insert(0, projektroot)` dann `import main` etc.
-
-**Wichtige bestehende Funktionen:**
-- `config.get_config() -> dict` — lädt und normalisiert config.json
-- `config.save_config(cfg: dict)` — speichert config.json
-- `main.run(year_filter, dry_run) -> (int, int)` — Hauptpipeline
-- `references.find_reference_match(text, cfg) -> ReferenceMatch`
-- `state_store.load_id_set(path) -> set[str]`
-
-**Bekannte Fallstricke:**
-- win32com nur auf Windows mit installiertem Outlook verfügbar
-- openpyxl: timezone-aware datetimes müssen `.replace(tzinfo=None)` vor xlsx-Schreiben
-- pystray: `icon.run()` blockiert — immer in eigenem Thread starten
-- QThread + Worker-Pattern für alle blocking calls (Outlook, Excel, HTTP)
+- Alle Python-Dateien: `from __future__ import annotations` am Anfang
+- PySide6: `QAction` aus `PySide6.QtGui` (nicht `QtWidgets`!)
+- Venv-Pakete: `uv pip install`, nie `pip install`
+- Business-Logik nie direkt in `app/` importieren — immer `sys.path.insert(0, root)` dann `import`
+- JSON-Store-Pfad: `Path(__file__).parent.parent.parent / "data" / "state" / "*.json"`
+- Neue Tabs: als eigenständige Klasse in `app/tabs/`, dann in `main_window.py` einbinden

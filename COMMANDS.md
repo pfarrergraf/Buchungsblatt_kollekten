@@ -1,154 +1,249 @@
-# Kollekten-Automation — Startanleitung & Testhandbuch
+# Kollekten-App — Befehle & Testhandbuch
+
+> Stand: 2026-04-17 | App-Version 1.1.0
+
+---
 
 ## Schnellstart
 
 ### Desktop-App starten
-```
+```bash
 cd C:\ai\Buchungsblatt_kollekten
 .venv\Scripts\python app_entry.py
 ```
 
-### Nur API-Server (ohne GUI, z.B. für Smartphone-Zugriff)
-```
-cd C:\ai\Buchungsblatt_kollekten
+### Nur API-Server (ohne GUI)
+```bash
+.venv\Scripts\python -m uvicorn app.api.server:app --host 127.0.0.1 --port 8765 --reload
+# oder:
 .venv\Scripts\python server_entry.py
 ```
 
-### Smartphone-Tunnel (nur solange Terminal offen)
-```
-ssh -o ServerAliveInterval=30 -R 80:localhost:8765 nokey@localhost.run
-```
-→ Die angezeigte `https://xxxx.lhr.life`-URL im Handy-Browser öffnen  
-→ Chrome: Menü (⋮) → „Zum Startbildschirm hinzufügen" → PWA installiert
-
----
-
-## Was beim ersten Start passiert
-
-1. App prüft ob `config.json` vollständig ist (Rechtsträger-Nr, beide Vorlagen)
-2. Falls unvollständig → **Setup-Wizard** öffnet sich automatisch
-3. Falls vollständig → direkt ins **Dashboard**
-
-**Aktuelle Config ist vollständig** — der Wizard erscheint nicht.
-
----
-
-## Was zu testen ist
-
-### 1. App-Start
-```
-.venv\Scripts\python app_entry.py
-```
-Erwartetes Verhalten:
-- Fenster öffnet sich (ca. 1–2 Sekunden)
-- Header zeigt „Kollekten-Automation" in blau
-- Tab „Übersicht" ist aktiv
-- Linke Sidebar zeigt Gemeindename und nächsten Lauf
-- Tabelle zeigt letzte Einträge (aus `output/kollekten_uebersicht.xlsx`)
-
-### 2. Vorschau-Lauf (kein Schreiben, sicher zu testen)
-- Button **„Vorschau"** klicken
-- Fortschrittsbalken / Statuszeile zeigt Meldungen
-- Am Ende: „X Kollekten verarbeitet, Y Fehler"
-- Keine neuen Dateien in `output/` (dry-run schreibt nichts)
-
-### 3. Echter Lauf
-- Button **„Jetzt ausführen"** klicken
-- Outlook muss offen und eingeloggt sein
-- E-Mails von `no-reply@ekhn.info` mit Betreff „Gottesdienststatistik" werden verarbeitet
-- Neue xlsx-Dateien in `output/eigene_gemeinde/` und `output/zur_weiterleitung/`
-- `output/kollekten_uebersicht.xlsx` wird aktualisiert
-
-### 4. Verlauf-Tab
-- Tab „Verlauf" öffnen
-- Tabelle zeigt alle bisherigen Kollekten mit Datum, Betrag, Zweck, Typ
-- Filter nach Monat/Jahr funktioniert
-- Einträge mit Warnung (!) sind gelb markiert
-
-### 5. Einstellungen
-- Tab „Einstellungen" → Sub-Tab „Allgemein"
-  - Gemeindename, RV-Nr, Bank, IBAN sichtbar und editierbar
-- Sub-Tab „PWA / API"
-  - „API-Server aktivieren" einschalten → Port 8765
-  - Speichern → App startet API-Server automatisch beim nächsten Start
-- Sub-Tab „KI": Provider auf „Deaktiviert" lassen (kein Key nötig)
-
-### 6. PWA / Smartphone
-- In „Einstellungen → PWA / API": API aktivieren, Port 8765, Speichern
-- `server_entry.py` starten (oder App neu starten)
-- SSH-Tunnel starten (s.o.)
-- Im Handy-Browser: Dashboard, Kollektenliste, Filter testen
-
----
-
-## Bekannte Einschränkungen beim Testen
-
-| Thema | Hinweis |
-|---|---|
-| Outlook | Muss lokal installiert und offen sein (win32com) |
-| Templates | Pfade in config.json müssen existieren (aktuell: Downloads-Ordner) |
-| Tray-Icon | Standardmäßig deaktiviert — erst nach Einstellung sichtbar |
-| PWA-URL | Wechselt bei jedem Tunnel-Neustart (localhost.run kostenlos) |
-| Gemeindename | Erscheint ggf. mit falschen Sonderzeichen → in Einstellungen korrigieren |
-
----
-
-## Dateipfade (aktuell konfiguriert)
-
-```
-Vorlage eigene Gemeinde:
-  C:\Users\Mein Computer\Downloads\12 RV RLW - KGM Buchungsblatt Kollekten und Spenden eigene Gemeinde 2026 V3.0-PNC.xlsx
-
-Vorlage Weiterleitung:
-  C:\Users\Mein Computer\Downloads\12 RV RLW - KGM Buchungsblatt Kollekten und Spenden zur Weiterleitung 2026 V3.0-PNC.xlsx
-
-Ausgabe:
-  C:\ai\Buchungsblatt_kollekten\output\
-
-Übersicht:
-  C:\ai\Buchungsblatt_kollekten\output\kollekten_uebersicht.xlsx
-
-Log:
-  C:\ai\Buchungsblatt_kollekten\kollekten.log
-
-Laufverlauf:
-  C:\ai\Buchungsblatt_kollekten\data\state\run_history.json
+### CLI-Verarbeitung (ohne GUI)
+```bash
+.venv\Scripts\python main.py run --year 2026
+.venv\Scripts\python main.py run --dry-run       # Testlauf, keine Dateien
 ```
 
 ---
 
-## Troubleshooting
+## Import-Tests (Syntax-Check)
 
-**App startet nicht / Import-Fehler**
-```
-.venv\Scripts\python -c "from app.main_window import MainWindow; print('OK')"
+```bash
+# Alle Module auf Importfehler prüfen
+.venv\Scripts\python -c "from app.main_window import MainWindow; print('main_window OK')"
+.venv\Scripts\python -c "from app.tabs.verwaltung import VerwaltungTab; print('verwaltung OK')"
+.venv\Scripts\python -c "from app.tabs.gottesdienst import GottesdienstTab; print('gottesdienst OK')"
+.venv\Scripts\python -c "from app.ai.tools import TOOL_LEVELS, to_anthropic_tools; print('tools OK')"
+.venv\Scripts\python -c "from app.ai.provider import get_provider; print('provider OK')"
+.venv\Scripts\python -c "from app.api.server import app; print('api OK')"
 ```
 
-**API-Server-Test (lokal)**
-```
-curl http://localhost:8765/api/status
+---
+
+## API-Endpunkte (Server muss laufen)
+
+```bash
+# Status
+curl http://127.0.0.1:8765/api/status
+
+# Alle Kollekten
+curl http://127.0.0.1:8765/api/kollekten
+
+# Kollekten gefiltert (month/year, nicht monat/jahr!)
+curl "http://127.0.0.1:8765/api/kollekten?month=4&year=2026"
+
+# Nur Warnungen
+curl "http://127.0.0.1:8765/api/kollekten?only_warnings=true"
+
+# Zusammenfassung
+curl "http://127.0.0.1:8765/api/kollekten/summary?month=4&year=2026"
+
+# Swagger UI
+# Browser: http://127.0.0.1:8765/api/docs
+
+# PWA
+# Browser: http://127.0.0.1:8765/
 ```
 
-**Abhängigkeiten nachinstallieren**
+---
+
+## KI-Tools testen
+
+```bash
+# Alle registrierten Tools anzeigen
+.venv\Scripts\python -c "
+from app.ai.tools import TOOL_LEVELS, to_anthropic_tools
+tools = to_anthropic_tools()
+for t in tools:
+    level = TOOL_LEVELS.get(t['name'], '?')
+    print(f'  [{level:20s}] {t[\"name\"]}')
+"
+
+# Einzelne Tool-Funktionen testen (ohne KI)
+.venv\Scripts\python -c "
+import sys; sys.path.insert(0, '.')
+from config import get_config
+from app.ai.tools import execute_tool
+cfg = get_config()
+print(execute_tool('get_zusammenfassung', {'monat': 4, 'jahr': 2026}, cfg))
+"
+
+.venv\Scripts\python -c "
+import sys; sys.path.insert(0, '.')
+from config import get_config
+from app.ai.tools import execute_tool
+cfg = get_config()
+print(execute_tool('konfiguration_info', {}, cfg))
+"
+
+.venv\Scripts\python -c "
+import sys; sys.path.insert(0, '.')
+from config import get_config
+from app.ai.tools import execute_tool
+cfg = get_config()
+print(execute_tool('liste_faellige_fristen', {'tage': 365}, cfg))
+"
+
+.venv\Scripts\python -c "
+import sys; sys.path.insert(0, '.')
+from config import get_config
+from app.ai.tools import execute_tool
+cfg = get_config()
+print(execute_tool('get_formular_info', {'typ': 'spendenquittung'}, cfg))
+"
 ```
+
+---
+
+## Wiedervorlagen / Fristen
+
+```bash
+# Fällige Fristen anzeigen
+.venv\Scripts\python -c "
+import json
+from pathlib import Path
+wv = json.loads(Path('data/state/wiedervorlagen.json').read_text(encoding='utf-8'))
+offen = [e for e in wv if not e.get('erledigt')]
+print(f'{len(offen)} offene Wiedervorlagen:')
+for e in sorted(offen, key=lambda x: x.get('frist_datum', '')):
+    print(f'  {e[\"frist_datum\"]}  {e[\"titel\"]}  [{e[\"kategorie\"]}]')
+"
+```
+
+---
+
+## Gottesdienst / Jahresplanung
+
+```bash
+# Gottesdienste anzeigen
+.venv\Scripts\python -c "
+import json
+from pathlib import Path
+gd = json.loads(Path('data/state/gottesdienste.json').read_text(encoding='utf-8'))
+print(f'{len(gd)} Gottesdienste:')
+for e in sorted(gd, key=lambda x: x.get('datum', ''))[:10]:
+    print(f'  {e[\"datum\"]}  {e.get(\"uhrzeit\",\"\")}  {e.get(\"pfarrer_in\",\"\")}  {e.get(\"organist\",\"\")}  {e.get(\"kollekte_zweck\",\"\")}')
+"
+
+# Kollektenplan anzeigen
+.venv\Scripts\python -c "
+import json
+from pathlib import Path
+kp = json.loads(Path('data/state/kollektenplan.json').read_text(encoding='utf-8'))
+print(f'{len(kp)} Kollektenplan-Eintraege')
+for e in kp[:10]:
+    print(f'  {e[\"datum\"]}  {e.get(\"zweck\",\"\")}')
+"
+```
+
+---
+
+## Abhängigkeiten
+
+```bash
+# Installieren
 uv pip install -r requirements.txt
+
+# Prüfen welche Pakete fehlen
+.venv\Scripts\python -c "import pdfplumber, openpyxl, PySide6, requests, fastapi, uvicorn; print('alle OK')"
+
+# Version anzeigen
+.venv\Scripts\python -c "from app.updater import APP_VERSION; print('Version:', APP_VERSION)"
 ```
 
-**Config zurücksetzen (Wizard erzwingen)**
-```
+---
+
+## Konfiguration
+
+```bash
+# Config anzeigen
+.venv\Scripts\python -c "
+import sys; sys.path.insert(0, '.')
+from config import get_config
+import json
+cfg = get_config()
+# Sensitive Felder ausblenden
+safe = {k: v for k, v in cfg.items() if k not in ('ai',)}
+print(json.dumps(safe, indent=2, ensure_ascii=False))
+"
+
+# Config zurücksetzen (erzwingt Setup-Wizard)
 del config.json
 .venv\Scripts\python app_entry.py
 ```
 
-**Log anzeigen**
-```
+---
+
+## Logs & Diagnose
+
+```bash
+# Letztes Log anzeigen
 type kollekten.log
+
+# Nur Fehler
+findstr "ERROR\|CRITICAL" kollekten.log
+
+# Verarbeitete E-Mail-IDs
+.venv\Scripts\python -c "
+from state_store import load_id_set
+ids = load_id_set('data/state/processed_emails.json')
+print(f'{len(ids)} verarbeitete E-Mails')
+"
 ```
 
 ---
 
-## Versionsinformation
+## Smartphone-Tunnel (localhost.run)
 
+```bash
+# Tunnel starten (solange Terminal offen)
+ssh -o ServerAliveInterval=30 -R 80:localhost:8765 nokey@localhost.run
+# → Angezeigte https://xxxx.lhr.life URL im Handy-Browser öffnen
+# → Chrome: Menü → "Zum Startbildschirm hinzufügen" → PWA installiert
 ```
-.venv\Scripts\python -c "from app.updater import APP_VERSION; print(APP_VERSION)"
+
+---
+
+## Build & Packaging
+
+```bash
+# PyInstaller-Build
+pyinstaller kollekten_app.spec
+
+# NSIS-Installer (nach Build)
+makensis installer\setup.nsi
 ```
+
+---
+
+## Bekannte Fallstricke
+
+| Problem | Lösung |
+|---------|--------|
+| `ImportError: QAction from QtWidgets` | `QAction` ist in PySide6 6.x in `QtGui` |
+| `win32com` nicht verfügbar | Outlook muss installiert sein |
+| Schriftzeichen in Log falsch | Windows CP1252 → `errors="replace"` beim Lesen |
+| API-Filter `monat=4` funktioniert nicht | Route nutzt `month`/`year` (Englisch!) |
+| App startet nicht — fehlende Config | `del config.json` → Setup-Wizard |
+| PDF zu groß für Read-Tool | pdfplumber direkt via Bash nutzen |

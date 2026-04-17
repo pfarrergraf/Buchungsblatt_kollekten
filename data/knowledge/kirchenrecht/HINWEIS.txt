@@ -1,0 +1,29 @@
+Kirchenrecht EKHN – Wissensbasis
+=================================
+
+Legen Sie hier PDF-Dateien des Kirchenrechts der EKHN ab.
+Die KI (Tool: suche_kirchenrecht) durchsucht diese automatisch per Keyword-Suche.
+
+Empfohlene Dokumente (alle kostenlos downloadbar auf kirchenrecht-ekhn.de):
+
+1. Kollektenverwaltungsordnung (KollVO)
+   URL: https://www.kirchenrecht-ekhn.de/document/19041
+   Dateiname: kollektenverwaltungsordnung.pdf
+
+2. Kirchengemeindeordnung (KGO)
+   URL: https://www.kirchenrecht-ekhn.de/
+   Dateiname: kirchengemeindeordnung.pdf
+
+3. Kollektenordnung
+   Dateiname: kollektenordnung.pdf
+
+4. Das Recht der EKHN (Gesamtschau, ~40 MB)
+   URL: https://www.kirchenrecht-ekhn.de/pdf/19916.pdf
+   Dateiname: das_recht_der_ekhn.pdf
+
+5. Kollektenplan 2027/2028
+   URL: https://kirchenrecht-ekhn.de/synodalds/60161.pdf
+   Dateiname: kollektenplan_2027_2028.pdf
+
+Nach dem Ablegen der PDFs werden diese beim nächsten KI-Zugriff automatisch
+indexiert (Text-Cache wird in data/knowledge/_cache/ angelegt).

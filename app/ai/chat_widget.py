@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (
 )
 
 from app.ai.provider import AIDisabledError, AIProvider, DisabledProvider, get_provider
+from app.ai.tools import TOOL_LEVELS
 
 
 # ── Worker ────────────────────────────────────────────────────────────────────
@@ -106,41 +107,57 @@ class ChatWorker(QObject):
     def _execute_call(self, call: dict, describe_fn, read_fn, action_fn) -> str:
         name = call["name"]
         args = call["args"]
+        level = TOOL_LEVELS.get(name, "read_only")
 
-        if name in ACTION_TOOLS:
-            description = describe_fn(name, args, self._cfg)
-            self.status.emit(f"Warte auf Bestätigung: {description}")
-            self._confirm_event.clear()
-            self._confirmed = False
-            self.confirm_needed.emit(name, description)
-            self._confirm_event.wait(timeout=120)
-            if not self._confirmed:
-                return "Aktion wurde vom Nutzer abgebrochen."
-            self.status.emit(f"Führe aus: {description} …")
-            return action_fn(name, args, self._cfg)
-        else:
+        if level == "read_only":
             self.status.emit(f"Lese Daten ({name}) …")
             return read_fn(name, args, self._cfg)
+
+        # Aktions-Tools: immer Bestätigung einholen
+        description = describe_fn(name, args, self._cfg)
+        self.status.emit(f"Warte auf Bestätigung: {description}")
+        self._confirm_event.clear()
+        self._confirmed = False
+        # Stufe mit in die Beschreibung kodieren (für den Dialog)
+        self.confirm_needed.emit(name + "|" + level, description)
+        self._confirm_event.wait(timeout=120)
+        if not self._confirmed:
+            return "Aktion wurde vom Nutzer abgebrochen."
+        self.status.emit(f"Führe aus: {description} …")
+        return action_fn(name, args, self._cfg)
 
 
 # ── Chat-Widget ───────────────────────────────────────────────────────────────
 
 _SYSTEM_PROMPT = (
-    "Du bist ein hilfreicher Assistent für evangelische Kirchengemeinden (EKHN). "
-    "Du hilfst bei der Verwaltung von Kollekten und Buchungsblättern.\n"
+    "Du bist ein hilfreicher Sekretariatsassistent für evangelische Kirchengemeinden (EKHN). "
+    "Du hilfst bei Kollekten, Buchungsblättern, Kirchenrecht und Gemeindeverwaltung.\n"
     "Gemeinde: {gemeinde}\n\n"
-    "Du hast Zugriff auf folgende Tools:\n"
+    "== Lese-Tools (sofort ausführen) ==\n"
     "- get_buchungen: Buchungen abrufen (optional nach Monat/Jahr filtern)\n"
     "- get_zusammenfassung: Summen und Anzahl für einen Zeitraum\n"
     "- konfiguration_info: Gemeindename, Empfänger, Vorlagen-Status\n"
+    "- suche_kirchenrecht: Kirchenrecht EKHN nach Stichwort durchsuchen\n"
+    "- suche_handbuch: Handbuch Gemeindebüro (Stand 08/2019) durchsuchen\n"
+    "- get_formular_info: Informationen zu EKHN-Formularen\n"
+    "- get_regionalverwaltung: Kontaktdaten der zuständigen Regionalverwaltung\n"
+    "- get_recent_errors: Letzte Fehler aus dem Anwendungs-Log\n"
+    "- get_kollektenplan: Kollektenzweck für ein Datum aus dem Jahresplan\n"
+    "- liste_faellige_fristen: Fällige Wiedervorlagen und Fristen\n\n"
+    "== Aktions-Tools (Nutzerbestätigung erforderlich) ==\n"
     "- verarbeitung_starten: Neue Outlook-E-Mails verarbeiten und Buchungsblätter erstellen\n"
-    "- buchungsblatt_versenden: Buchungsblätter (xlsx) per Outlook versenden\n\n"
-    "Wichtige Regeln:\n"
-    "1. Bevor du verarbeitung_starten oder buchungsblatt_versenden aufrufst, "
-    "fasse zusammen was du tun wirst und frage den Nutzer nach Bestätigung.\n"
-    "2. Nutze get_zusammenfassung oder get_buchungen, um Fragen über Daten zu beantworten.\n"
-    "3. Antworte immer auf Deutsch, präzise und freundlich.\n"
-    "4. Nenne Beträge immer in Euro mit deutschem Zahlenformat (z. B. 231,00 €)."
+    "- buchungsblatt_versenden: Buchungsblätter (xlsx) per Outlook versenden (E-Mail-Versand!)\n"
+    "- save_note: Aktennotiz speichern\n\n"
+    "== Wichtige Regeln ==\n"
+    "1. Lese-Tools direkt aufrufen – kein Dialog nötig.\n"
+    "2. Aktions-Tools erst aufrufen, wenn der Nutzer explizit zustimmt.\n"
+    "3. Bei kirchenrechtlichen Fragen: immer Quelle, §, Stand nennen + Disclaimer.\n"
+    "4. Antworte immer auf Deutsch, präzise und freundlich.\n"
+    "5. Beträge immer in Euro mit deutschem Zahlenformat (z. B. 231,00 €).\n\n"
+    "== Rechtlicher Disclaimer (bei jedem Kirchenrechtsbezug wiederholen) ==\n"
+    "Hinweis: Dies ist keine verbindliche Rechtsberatung. Maßgeblich ist die jeweils "
+    "aktuelle Fassung des Kirchenrechts der EKHN sowie im Zweifel die zuständige "
+    "Regionalverwaltung oder der Stabsbereich Recht (Kirchenverwaltung Darmstadt)."
 )
 
 _BUBBLE_USER = (
@@ -309,16 +326,42 @@ class ChatWidget(QWidget):
     def _on_status(self, text: str) -> None:
         self._append_bubble(_BUBBLE_STATUS, text)
 
-    def _on_confirm_needed(self, tool_name: str, description: str) -> None:
-        """Läuft im Haupt-Thread – zeigt Bestätigungsdialog."""
-        result = QMessageBox.question(
-            self,
-            "Aktion bestätigen",
-            f"Die KI möchte folgende Aktion ausführen:\n\n{description}\n\nAusführen?",
-            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-            QMessageBox.StandardButton.No,
-        )
-        confirmed = result == QMessageBox.StandardButton.Yes
+    def _on_confirm_needed(self, tool_name_level: str, description: str) -> None:
+        """Läuft im Haupt-Thread – zeigt Bestätigungsdialog (stufenangepasst)."""
+        # tool_name_level enthält "tool_name|level" oder nur "tool_name"
+        parts = tool_name_level.split("|", 1)
+        level = parts[1] if len(parts) > 1 else "user_confirmed"
+
+        if level == "user_confirmed_send":
+            msg_text = (
+                f"Die KI möchte folgende Aktion ausführen:\n\n"
+                f"{description}\n\n"
+                f"⚠ Es wird eine E-Mail versendet. Ausführen?"
+            )
+            box = QMessageBox(
+                QMessageBox.Icon.Warning,
+                "E-Mail-Versand bestätigen",
+                msg_text,
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                self,
+            )
+            box.setDefaultButton(QMessageBox.StandardButton.No)
+        else:
+            msg_text = (
+                f"Die KI möchte folgende Aktion ausführen:\n\n"
+                f"{description}\n\n"
+                f"Ausführen?"
+            )
+            box = QMessageBox(
+                QMessageBox.Icon.Question,
+                "Aktion bestätigen",
+                msg_text,
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                self,
+            )
+            box.setDefaultButton(QMessageBox.StandardButton.No)
+
+        confirmed = box.exec() == QMessageBox.StandardButton.Yes
         if self._worker:
             self._worker.set_confirm_result(confirmed)
 

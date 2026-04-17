@@ -1,0 +1,102 @@
+[
+  {
+    "id": "spendenquittung",
+    "name": "Spendenquittung (Zuwendungsbestätigung)",
+    "schlagworte": ["Spende", "Quittung", "Zuwendung", "Steuer"],
+    "quelle": "EKHN-Vorlage (lokal)",
+    "zustaendigkeit": "Kirchengemeinde",
+    "vpn_erforderlich": false,
+    "vorlage_lokal": "data/formulare/templates/spendenquittung.docx",
+    "stand": "2024",
+    "hinweis": "Muster 01 (Geldzuwendung) des BMF, aktualisiert für EKHN. Unterschrift Kirchenvorstand erforderlich."
+  },
+  {
+    "id": "ausgabeanordnung",
+    "name": "Ausgabeanordnung (AAO)",
+    "schlagworte": ["Ausgabe", "Anordnung", "AAO", "Zahlung", "MACH"],
+    "quelle": "MACH / Regionalverwaltung",
+    "zustaendigkeit": "Kirchenvorstand (KV-Beschluss erforderlich ab bestimmten Beträgen)",
+    "vpn_erforderlich": true,
+    "url": "https://hilfe.ekhn.de/",
+    "stand": "aktuell",
+    "hinweis": "Über MACH-Finanzsystem der EKHN. VPN + Login erforderlich. Zuständige RV berät."
+  },
+  {
+    "id": "einnahmenordnung",
+    "name": "Einnahme-Anordnung",
+    "schlagworte": ["Einnahme", "Buchung", "MACH"],
+    "quelle": "MACH / Regionalverwaltung",
+    "zustaendigkeit": "Kirchengemeinde / Regionalverwaltung",
+    "vpn_erforderlich": true,
+    "url": "https://hilfe.ekhn.de/",
+    "stand": "aktuell",
+    "hinweis": "Über MACH-Finanzsystem. VPN + Login erforderlich."
+  },
+  {
+    "id": "urlaubsantrag",
+    "name": "Urlaubsantrag",
+    "schlagworte": ["Urlaub", "Antrag", "Fehlzeit", "Personal"],
+    "quelle": "Personalverwaltung / Regionalverwaltung",
+    "zustaendigkeit": "Regionalverwaltung (Genehmigung)",
+    "vpn_erforderlich": false,
+    "stand": "aktuell",
+    "hinweis": "Vorlage bei der zuständigen Regionalverwaltung erhältlich. Genehmigung durch Dienstvorgesetzten."
+  },
+  {
+    "id": "au_bescheinigung",
+    "name": "AU-Bescheinigung (Arbeitsunfähigkeit)",
+    "schlagworte": ["Krankheit", "AU", "Krankmeldung", "Arbeitsunfähigkeit", "Personal"],
+    "quelle": "Krankenkasse / Arzt",
+    "zustaendigkeit": "Mitarbeitende (Einreichung), Kirchengemeinde (Ablage)",
+    "vpn_erforderlich": false,
+    "stand": "aktuell",
+    "hinweis": "Aufbewahrungsfrist: 3 Jahre. An Kirchengemeinde und Regionalverwaltung weiterleiten."
+  },
+  {
+    "id": "kv_protokoll",
+    "name": "Kirchenvorstandsprotokoll",
+    "schlagworte": ["KV", "Kirchenvorstand", "Protokoll", "Sitzung"],
+    "quelle": "Kirchengemeinde",
+    "zustaendigkeit": "Kirchengemeinde (Schriftführung)",
+    "vpn_erforderlich": false,
+    "stand": "aktuell",
+    "hinweis": "Muster in Handbuch Gemeindebüro S. 142. Weiterleitung an RV innerhalb 4 Wochen (KGO §32)."
+  },
+  {
+    "id": "inventarliste",
+    "name": "Inventarliste / Inventar",
+    "schlagworte": ["Inventar", "Vermögen", "Bestandsliste"],
+    "quelle": "Kirchengemeinde",
+    "zustaendigkeit": "Kirchenvorstand",
+    "vpn_erforderlich": false,
+    "stand": "aktuell",
+    "hinweis": "Jährliche Aktualisierung empfohlen. Handbuch Gemeindebüro S. 163."
+  },
+  {
+    "id": "taufregister_antrag",
+    "name": "Taufeintragung / Taufregister",
+    "schlagworte": ["Taufe", "Register", "Amtshandlung", "Kiris"],
+    "quelle": "Kiris (ersetzt KirA seit Oktober 2025)",
+    "zustaendigkeit": "Pfarramt",
+    "vpn_erforderlich": true,
+    "hinweis": "Eintragung in Kiris. VPN + Login erforderlich. Anleitung: hilfe.ekhn.de → Kiris."
+  },
+  {
+    "id": "kirchenaustritt",
+    "name": "Kirchenaustritts-Verarbeitung",
+    "schlagworte": ["Austritt", "Kirchenaustritt", "Kiris", "Meldeamt"],
+    "quelle": "Kiris + Standesamt/Meldeamt",
+    "zustaendigkeit": "Pfarramt / Kirchengemeinde",
+    "vpn_erforderlich": true,
+    "hinweis": "Austritt erfolgt beim Standesamt/Meldeamt. Kiris-Eintragung: VPN + Login. Bestätigung an Gemeindemitglied."
+  },
+  {
+    "id": "haushaltsplan",
+    "name": "Haushaltplan (HH-Plan)",
+    "schlagworte": ["Haushalt", "Budget", "Jahresplan", "Finanzen"],
+    "quelle": "MACH / Regionalverwaltung",
+    "zustaendigkeit": "Kirchenvorstand (Beschluss Oktober/November), Regionalverwaltung (Genehmigung)",
+    "vpn_erforderlich": true,
+    "hinweis": "KV-Beschluss bis Oktober. Vorlage und Buchungssystem über MACH. Handbuch S. 153."
+  }
+]
